@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--violeta-3);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Rubik;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+h2 {
+    color: #FFF;
+    font-family: Rubik;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h3 {
+    color: #FFF;
+    font-family: Rubik;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h4 {
+    color: #FFF;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+h5 {
+    color: #FFF;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+p {
+    color: #FFF;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+:root {
+    --violeta-3: #1B0047;
+    --violeta-2: #2D0075;
+    --violeta-1: #5300DB;
+    --violeta0: #7724FF;
+    --violeta1: #A36BFF;
+    --violeta2: #D3B8FF;
+    --violeta3: #EFE5FF;
+
+    --celeste-3: #003C47;
+    --celeste-2: #007D94;
+    --celeste-1: #00BADB;
+    --celeste0: #24DCFF;
+    --celeste1: #6BE7FF;
+    --celeste2: #B2F3FF;
+    --celeste3: #E5FBFF;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--violeta-2);
+    padding: 0 0px;
+    display: flex;
+    width: auto;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconoMedio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.iconoMedio * {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.iconoChico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+.iconoChico *{
+    max-width: 50%;
+    max-height: 50%;
+}
+.navbarParte {
+    display: flex;
+}
+
+.iconoMedio *:target {
+    max-width: 100%;
+    max-width: 100%;
+}
+
+
+.menuHamburguesa{
+    overflow: hidden;
+    transition: 500ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background-color: var(--violeta-2);
+    position:sticky;
+    left: 0;
+    top: 60px;
+    width: 0;
+    height: calc(100vh - 60px);
+}
+.menuHamburguesaAbierto{
+    width: 60px;
+}
+.menuHamburguesa:hover{
+    width: 175px;
+}
+
+.menuHamburguesa h4{
+    transition: 500ms;
+    opacity: 0;
+    margin: auto;
+}
+.menuHamburguesa:hover h4{
+    opacity: 1;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.botonHamburguesa{
+    padding:0 10px 0 5px;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.hamburguesaArriba{
+    height: auto;
+    width: 100%;
+}
+.hamburguesaAbajo{
+    height: 180px;
+    width: 100%;
+}
+
+.perfilHamburguesa{
+    width: 200px;
+}
+.perfilHamburguesa ul{
+    text-align: end;
+    padding: 20px;
+}
+.perfilHamburguesa ul li{
+}
+.perfilHamburguesa ul li img{
+    width: 90%;
+}
+.perfilHamburguesa ul li h2{
+    margin-top: 0;
+}
+.perfilHamburguesa ul li h4{
+    margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: var(--violeta-2);
+    display: flex;
+    width: 100%;
+    position: static;
+    bottom: 0;
+    padding: 53px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 25px;
+}
+
+footer .footSuperior {
+    display: flex;
+    width: 80%;
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-shrink: 0;
+    align-items: center;
+}
+.footRedes{
+    display: flex;
+    height: fit-content;
+    gap: 10px;
+}
+
+footer .footSuperior .footSuperiorIzq{
+    display: flex;
+    align-items: center;
+}
+footer .footSuperior .footSuperiorIzq img{
+    padding: 10px;
+}
+
+footer .footMedio {
+    width: 90%;
+}
+
+footer .footInferior{
+    display: flex;
+    width: 80%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+footer .footInferior h3{
+    margin-bottom: 10px;
+}
+footer .footInferior h5{
+    margin: 5px 0;
+}
