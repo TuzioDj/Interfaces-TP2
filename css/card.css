@@ -1,0 +1,60 @@
+.card {
+    box-sizing: border-box;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 250px;
+    height: fit-content;
+}
+
+.cardPrecio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 8px;
+    border-radius: 0 0 30px 0;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    height: fit-content;
+}
+.cardPrecio p{
+    text-align: center;
+    margin-left: 3px;
+    padding: 2px 12px;
+    line-height: 0;
+}
+
+.cardImage {
+    line-height: 0;
+}
+
+.cardImage img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: white;
+    height: 50px;
+}
+.cardButton{
+    border-radius: 100px;
+    background-color: black;
+    width: 45px;
+    height: 45px;
+}
+.cardNombre{
+    color: black;
+    margin: 0;
+}
+.cardCategoria{
+    color: #00000050;
+    margin: 0;
+}

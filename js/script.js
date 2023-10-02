@@ -1,17 +1,24 @@
-var botonHamburguesa = document.getElementById('hamburguesa')
+var botonMenuHamburguesa = document.getElementById('botonMenuHamburguesa')
 var menuHamburguesa = document.getElementById('menuHamburguesa')
 var imagen1 = "../images/svg/Hamburguesa cerrada.svg"
 var imagen2 = "../images/svg/Hamburguesa abierta.svg"
 var contadorImagen = 0;
 
-botonHamburguesa.addEventListener('click', function () {
+botonMenuHamburguesa.addEventListener('click', function () {
     menuHamburguesa.classList.toggle("menuHamburguesaAbierto");
     if (contadorImagen == 0) {
-        botonHamburguesa.src = imagen2;
+        botonMenuHamburguesa.src = imagen2;
         contadorImagen = 1;
     }
     else {
-        botonHamburguesa.src = imagen1;
+        botonMenuHamburguesa.src = imagen1;
         contadorImagen = 0;
     }
+})
+
+var perfilHamburguesa = document.getElementById('perfilHamburguesa')
+var botonPerfilHamburguesa = document.getElementById('botonPerfilHamburguesa')
+
+botonPerfilHamburguesa.addEventListener('click', function () {
+    perfilHamburguesa.classList.toggle('perfilHamburguesaAbierto');
 })

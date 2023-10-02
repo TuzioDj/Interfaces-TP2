@@ -22,7 +22,7 @@ h2 {
     font-family: Rubik;
     font-size: 24px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
 }
 
@@ -40,7 +40,7 @@ h4 {
     font-family: Rubik;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: normal;
 }
 
@@ -49,7 +49,7 @@ h5 {
     font-family: Rubik;
     font-size: 14px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: normal;
 }
 
@@ -60,6 +60,11 @@ p {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
 }
 
 :root {
@@ -100,7 +105,7 @@ p {
     height: 60px;
 }
 
-.iconoMedio * {
+.iconoMedio img {
     max-width: 50%;
     max-height: 50%;
 }
@@ -112,21 +117,18 @@ p {
     width: 50px;
     height: 50px;
 }
-.iconoChico *{
+
+.iconoChico * {
     max-width: 50%;
     max-height: 50%;
 }
+
 .navbarParte {
     display: flex;
 }
 
-.iconoMedio *:target {
-    max-width: 100%;
-    max-width: 100%;
-}
 
-
-.menuHamburguesa{
+.menuHamburguesa {
     overflow: hidden;
     transition: 500ms;
     display: flex;
@@ -134,69 +136,129 @@ p {
     justify-content: space-between;
     align-items: start;
     background-color: var(--violeta-2);
-    position:sticky;
+    position: sticky;
     left: 0;
     top: 60px;
     width: 0;
     height: calc(100vh - 60px);
 }
-.menuHamburguesaAbierto{
+
+.menuHamburguesaAbierto {
     width: 60px;
 }
-.menuHamburguesa:hover{
+
+.menuHamburguesa:hover {
     width: 175px;
 }
 
-.menuHamburguesa h4{
+.menuHamburguesa h4 {
     transition: 500ms;
     opacity: 0;
     margin: auto;
 }
-.menuHamburguesa:hover h4{
+
+.menuHamburguesa:hover h4 {
     opacity: 1;
 }
 
-ul{
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.botonHamburguesa{
-    padding:0 10px 0 5px;
+.botonHamburguesa {
+    padding: 0 10px 0 5px;
     width: fit-content;
     display: flex;
     flex-direction: row;
 }
 
-.hamburguesaArriba{
+.hamburguesaArriba {
     height: auto;
     width: 100%;
+    overflow: hidden;
 }
-.hamburguesaAbajo{
+
+.hamburguesaArriba:hover {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff4e;
+    border-radius: 5px;
+}
+
+
+
+.hamburguesaAbajo {
+    margin-top: 15px;
     height: 180px;
     width: 100%;
 }
 
-.perfilHamburguesa{
+.hamburguesaAbajo li {
+    display: flex;
+    justify-content: center;
+}
+
+#separacionMenuHamburguesa {
+    width: 90%;
+    height: 2px;
+}
+
+
+
+.perfilHamburguesa {
+    height: 0;
+    overflow: hidden;
+    transition: 500ms;
+    border-radius: 0 0 0 25px;
+    background-color: var(--violeta-2);
+    position: fixed;
+    right: 0;
+    top: 60px;
     width: 200px;
 }
-.perfilHamburguesa ul{
+
+.perfilHamburguesaAbierto {
+    height: 300px;
+}
+
+.perfilHamburguesa ul {
     text-align: end;
     padding: 20px;
 }
-.perfilHamburguesa ul li{
-}
-.perfilHamburguesa ul li img{
+
+.perfilHamburguesa ul li {}
+
+.perfilHamburguesa ul li img {
     width: 90%;
 }
-.perfilHamburguesa ul li h2{
+
+.perfilHamburguesa ul li h2 {
     margin-top: 0;
 }
-.perfilHamburguesa ul li h4{
+
+.perfilHamburguesa ul li h4 {
     margin: 10px 0;
+    text-decoration: underline;
 }
 
+#botonPerfilHamburguesa,
+#botonMenuHamburguesa {
+    cursor: pointer;
+}
 
 
 
@@ -229,33 +291,38 @@ footer .footSuperior {
     flex-shrink: 0;
     align-items: center;
 }
-.footRedes{
+
+.footRedes {
     display: flex;
     height: fit-content;
     gap: 10px;
 }
 
-footer .footSuperior .footSuperiorIzq{
+footer .footSuperior .footSuperiorIzq {
     display: flex;
     align-items: center;
 }
-footer .footSuperior .footSuperiorIzq img{
+
+footer .footSuperior .footSuperiorIzq img {
     padding: 10px;
 }
 
 footer .footMedio {
     width: 90%;
+    height: 2px;
 }
 
-footer .footInferior{
+footer .footInferior {
     display: flex;
     width: 80%;
     align-items: flex-start;
     justify-content: space-between;
 }
-footer .footInferior h3{
+
+footer .footInferior h3 {
     margin-bottom: 10px;
 }
-footer .footInferior h5{
+
+footer .footInferior h5 {
     margin: 5px 0;
 }

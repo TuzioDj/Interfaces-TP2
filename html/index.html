@@ -5,48 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP Especial 2 - Interfaces</title>
+    <link rel="icon" type="image/svg+xml" href="../images/svg/Diamante-transformed-PhotoRoom 1.svg">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
 <body>
     <header class="navbar">
         <div class="navbarParte">
-            <div class="iconoMedio">
-                <img id="hamburguesa" src="../images/svg/Hamburguesa cerrada.svg" alt="Hamburguesa">
+            <div id="botonMenuHamburguesa" class="iconoMedio">
+                <img src="../images/svg/Hamburguesa cerrada.svg" alt="Hamburguesa">
             </div>
-            <div class="iconoMedio">
-                <img src="../images/svg/Diamante-transformed-PhotoRoom 1.svg" alt="Logo">
-            </div>
+            <a href="index.html" class="iconoMedio">
+               <img src="../images/svg/Diamante-transformed-PhotoRoom 1.svg" alt="Logo">
+            </a>
         </div>
 
         <div class="navbarParte">
             <div class="iconoMedio">
                 <img src="../images/svg/Carrito.svg" alt="Carrito">
             </div>
-            <div class="iconoMedio">
-                <img src="../images/svg/Perfil.svg" alt="Perfil">
+            <div id="botonPerfilHamburguesa" class="iconoMedio">
+                <img src="../images/svg/Foto de perfil.svg" alt="Perfil">
             </div>
         </div>
     </header>
 
-
-    <div class="menuHamburguesa" id="menuHamburguesa">
-        <div class="hamburguesaArriba">
-            <ul>
-                <li class="botonHamburguesa">
-                    <div class="iconoChico">
-                        <img src="../images/svg/Perfil.svg" alt="Perfil">
-                    </div>
-                    <h4>Recientes</h4>
-                </li>
-            </ul>
-        </div>
-        <div class="hamburguesaAbajo">
-
-        </div>
-    </div>
-
-    <div class="perfilHamburguesa">
+    <div id="perfilHamburguesa" class="perfilHamburguesa">
         <ul class="botonPerfil">
             <li>
                 <h2>Hola, Maestro</h2>
@@ -64,7 +48,7 @@
                 <h4>Configuracion</h4>
             </li>
             <li>
-                <h4>Cerrar sesion</h4>
+                <h4><a href="login.html">Cerrar sesion</a></h4>
             </li>
             <li>
                 <img src="../images/svg/Linea.svg" alt="separacion">
@@ -74,6 +58,135 @@
             </li>
         </ul>
     </div>
+
+    <div class="menuHamburguesa" id="menuHamburguesa">
+        <div class="hamburguesaArriba">
+            <ul>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Inicio.svg" alt="Inicio">
+                    </div>
+                    <h4>Inicio</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Recientes.svg" alt="Recientes">
+                    </div>
+                    <h4>Recientes</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Accion.svg" alt="Acción">
+                    </div>
+                    <h4>Acción</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Aventura.svg" alt="Aventura">
+                    </div>
+                    <h4>Aventura</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Cocina.svg" alt="Cocina">
+                    </div>
+                    <h4>Cocina</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Carreras.svg" alt="Carreras">
+                    </div>
+                    <h4>Carreras</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Deportes.svg" alt="Deportes">
+                    </div>
+                    <h4>Deportes</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Divertidos.svg" alt="Divertidos">
+                    </div>
+                    <h4>Divertidos</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/DeMesa.svg" alt="De Mesa">
+                    </div>
+                    <h4>Mesa</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Estrategia.svg" alt="Estrategia">
+                    </div>
+                    <h4>Estrategia</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Infantil.svg" alt="Infantil">
+                    </div>
+                    <h4>Infantil</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Multijugador.svg" alt="Multijugador">
+                    </div>
+                    <h4>Multijugador</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Motos.svg" alt="Motos">
+                    </div>
+                    <h4>Motos</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Retro.svg" alt="Retro">
+                    </div>
+                    <h4>Retro</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Terror.svg" alt="Terror">
+                    </div>
+                    <h4>Terror</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Categorias/Vestir.svg" alt="Vestir">
+                    </div>
+                    <h4>Vestir</h4>
+                </li>
+            </ul>
+        </div>
+        <div class="hamburguesaAbajo">
+            <ul>
+                <li>
+                    <img id="separacionMenuHamburguesa" src="../images/svg/Linea.svg" alt="Separacion">
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Facebook.svg" alt="Facebook">
+                    </div>
+                    <h4>Facebook</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Instagram.svg" alt="Instagram">
+                    </div>
+                    <h4>Instagram</h4>
+                </li>
+                <li class="botonHamburguesa">
+                    <div class="iconoChico">
+                        <img src="../images/svg/Twitter.svg" alt="Twitter">
+                    </div>
+                    <h4>Twitter</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 
 
 
@@ -85,9 +198,11 @@
 
     <footer>
         <div class="footSuperior">
-            <div class="footSuperiorIzq">
-                <img src="../images/svg/Diamante-transformed-PhotoRoom 1.svg" alt="Logo">
-                <h2>Joya</h2>
+            <div>
+                <a class="footSuperiorIzq" href="index.html">
+                    <img src="../images/svg/Diamante-transformed-PhotoRoom 1.svg" alt="Logo">
+                    <h2>Joya</h2>
+                </a>
             </div>
             <div>
                 <h2>© 2017 - 2023 Joya Inc.</h2>
