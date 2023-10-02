@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
+iframe{
+    width: 100%;
+    height:max-content;
+}
 body {
     font-family: 'Rubik', sans-serif;
     background-color: var(--violeta-3);
@@ -239,8 +242,6 @@ ul {
     text-align: end;
     padding: 20px;
 }
-
-.perfilHamburguesa ul li {}
 
 .perfilHamburguesa ul li img {
     width: 90%;

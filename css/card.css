@@ -45,10 +45,33 @@
     height: 50px;
 }
 .cardButton{
+    cursor: pointer;
+    background-image: url(../images/svg/Jugar.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100px;
     background-color: black;
     width: 45px;
     height: 45px;
+}
+.cardButtonPaga{
+    background-image: url(../images/svg/Añadir\ al\ carrito.svg);
+    transition: 300ms;
+}
+.cardButtonAñadidoAlCarrito{
+    background-image: url(../images/svg/Añadido\ al\ carrito.svg) ;
+    transition: 300ms;
+}
+.cardButtonAñadidoAlCarrito:hover{
+    background-image: url(../images/svg/Eliminar\ del\ carrito.svg) ;
+}
+.cardButton img{
+    width: 50%;
+    height: 50%;
 }
 .cardNombre{
     color: black;
