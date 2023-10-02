@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-iframe{
+
+iframe {
     width: 100%;
-    height:max-content;
+    height: max-content;
 }
+
 body {
     font-family: 'Rubik', sans-serif;
     background-color: var(--violeta-3);
@@ -210,12 +212,12 @@ ul {
     width: 100%;
 }
 
-.hamburguesaAbajo li {
+.hamburguesaAbajo li,.hamburguesaArriba li {
     display: flex;
     justify-content: center;
 }
 
-#separacionMenuHamburguesa {
+.separacionMenuHamburguesa {
     width: 90%;
     height: 2px;
 }
