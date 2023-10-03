@@ -212,7 +212,8 @@ ul {
     width: 100%;
 }
 
-.hamburguesaAbajo li,.hamburguesaArriba li {
+.hamburguesaAbajo li,
+.hamburguesaArriba li {
     display: flex;
     justify-content: center;
 }
@@ -329,3 +330,50 @@ footer .footInferior h3 {
 footer .footInferior h5 {
     margin: 5px 0;
 }
+
+
+.log {
+    width: 821px;
+    /* Ancho del contenedor del formulario */
+    height: 489px;
+    margin: 0 auto;
+    /* Centra horizontalmente el contenedor */
+    padding: 20px;
+    border-radius: 30px;
+    background: #2D0075;
+}
+
+.log h1 {
+    text-align: center;
+    /* Alinea el título al centro horizontalmente */
+}
+
+label {
+    display: flex;
+    text-align: center;
+    margin-left: 215px
+}
+
+.inpLogin {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    width: 378px;
+    border-radius: 15px;
+}
+
+.log .boton {
+    cursor: pointer;
+    display: inline-flex;
+    border-radius: 20px;
+    background: #24DCFF;    
+    margin-left: 44%
+}
+
+.boton h4 {
+    /* Estilos del texto dentro del botón */
+    margin: 10px;
+    text-align: center;
+    line-height: 20px; /* Alinea verticalmente el texto en el botón */
+}
+
