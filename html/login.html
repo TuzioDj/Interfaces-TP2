@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar sesión</title>
+    <link rel="icon" type="image/svg+xml" href="../images/svg/Diamante-transformed-PhotoRoom 1.svg">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
@@ -12,19 +13,46 @@
     <div class="log">
         <h1>Iniciar sesión</h1>
         <form action="index.html" id="formLogin">
-                <label for="correo">
-                    <h5>Correo electrónico</h5>
-                </label>
-                <input class="inpLogin" type="email" id="correo" name="correo" required><br><br>
-                <label for="clave">
-                    <h5>Contraseña</h5>
-                </label>
-                <input class="inpLogin"type="password" id="clave" name="clave" required><br><br>
-                <button class="boton" type="submit">
-                    <h4>Iniciar Sesión</h4>
+            <label for="correo">
+                <h4>Correo electrónico</h4>
+            </label>
+            <input type="email" name="correo" required><br><br>
+            <label for="clave">
+                <h4>Contraseña</h4>
+            </label>
+            <input type="password" name="clave" required><br><br>
+            <a href="index.html">
+                <button class="botonLog" type="submit">
+                    <h3>Iniciar Sesión</h3>
                 </button>
+            </a>
         </form>
+        <div class="separador">
+            <img src="../images/svg/Separador.svg" alt="separacion">
+            <h4>O</h4>
+            <img src="../images/svg/Separador.svg" alt="separacion">
+        </div>
+        <div class="botones">
+            <button class="botonRedes" type="submit">
+                <img src="../images/svg/Facebook.svg" alt="Facebook">
+                <span>
+                    <h4 class="logRedes">Iniciar Sesión con Facebook</h4>
+                </span>
+            </button>
+            <button class="botonRedes" type="submit">
+                <img src="../images/svg/Google.svg" alt="Google">
+                <span>
+                    <h4 class="logRedes">Iniciar Sesión con Google</h4>
+                </span>
+            </button>
+        </div>
+        <h4>¿Olvidaste tu contraseña?</h4>
     </div>
+
+    <div class="registrar">
+        <h2>¿No tienes una cuenta? Registrate</h2>
+    </div>
+
 </body>
 
 </html>
