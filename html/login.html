@@ -7,52 +7,199 @@
     <title>Iniciar sesión</title>
     <link rel="icon" type="image/svg+xml" href="../images/svg/Diamante-transformed-PhotoRoom 1.svg">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+
 </head>
 
 <body>
-    <div class="log">
-        <h1>Iniciar sesión</h1>
-        <form action="index.html" id="formLogin">
-            <label for="correo">
-                <h4>Correo electrónico</h4>
-            </label>
-            <input type="email" name="correo" required><br><br>
-            <label for="clave">
-                <h4>Contraseña</h4>
-            </label>
-            <input type="password" name="clave" required><br><br>
-            <a href="index.html">
-                <button class="botonLog" type="submit">
-                    <h3>Iniciar Sesión</h3>
+    <main>
+        <div class="register">
+            <div class="reg">
+                <h2 id="registerTitulo">Registrarse</h2>
+                <form action="index.html" class="formRegister">
+
+                    <div class="labelContainer nombre">
+                        <label for="nombre">
+                            <img src="../images/svg/Labels/Persona.svg" alt="sobre">
+                            <h5>Nombre</h5><span class="asterisco">*</span>
+                        </label>
+                        <input type="text" name="nombre" placeholder="Inserte su nombre aquí" required>
+                    </div>
+
+                    <div class="labelContainer apellido">
+                        <label for="apellido">
+                            <img src="../images/svg/Labels/Persona.svg" alt="sobre">
+                            <h5>Apellido</h5><span class="asterisco">*</span>
+                        </label>
+                        <input type="text" name="apellido" placeholder="Inserte su apellido electrónico aquí" required>
+                    </div>
+
+                    <div class="labelContainer edad">
+                        <label for="edad">
+                            <img src="../images/svg/Labels/Torta.svg" alt="sobre">
+                            <h5>Edad</h5><span class="asterisco">*</span>
+                        </label>
+                        <input type="number" name="edad" placeholder="Edad" required>
+                    </div>
+
+                    <div class="labelContainer correo">
+                        <label for="correo">
+                            <img src="../images/svg/Labels/Sobre.svg" alt="sobre">
+                            <h5>Correo electrónico</h5><span class="asterisco">*</span>
+                        </label>
+                        <input type="email" name="correo" placeholder="Inserte su correo electrónico aquí" required>
+                    </div>
+
+                    <div class="labelContainer usuario">
+                        <label for="usuario">
+                            <img src="../images/svg/Labels/Persona.svg" alt="sobre">
+                            <h5>Usuario (opcional)</h5>
+                        </label>
+                        <input type="email" name="usuario" placeholder="Inserte su usuario">
+                    </div>
+
+                    <div class="labelContainer contraseña">
+                        <label for="contraseña">
+                            <img src="../images/svg/Labels/Candado.svg" alt="sobre">
+                            <h5>Contraseña</h5><span class="asterisco">*</span>
+                        </label>
+                        <input type="password" name="contraseña" placeholder="Inserte su contraseña aquí " required>
+                    </div>
+
+                    <div class="labelContainer confirmarContraseña">
+                        <label for="confirmarContraseña">
+                            <img src="../images/svg/Labels/Candado con flecha.svg" alt="sobre">
+                            <h5>Confirmar contraseña</h5><span class="asterisco">*</span>
+                        </label>
+                        <input type="password" name="confirmarContraseña"
+                            placeholder="Inserte su contraseña nuevamente aquí" required>
+                    </div>
+
+
+                    <a class="botonRegistrarse" href="index.html">
+                        <button class="boton botonPrimarioCeleste" type="submit">
+                            <h4 id="botonRegistrarse">Registrarse</h4>
+                        </button>
+                    </a>
+
+                </form>
+                <div class="separador">
+                    <img src="../images/svg/Linea.svg" alt="separacion">
+                    <h4>O</h4>
+                    <img src="../images/svg/Linea.svg" alt="separacion">
+                </div>
+                <button class="boton botonSecundarioCeleste" type="submit">
+                    <img src="../images/svg/Facebook.svg" alt="Facebook">
+                    <h4 id="regFacebook">Registrarse con Facebook</h4>
                 </button>
-            </a>
-        </form>
-        <div class="separador">
-            <img src="../images/svg/Separador.svg" alt="separacion">
-            <h4>O</h4>
-            <img src="../images/svg/Separador.svg" alt="separacion">
+                <button class="boton botonSecundarioCeleste" type="submit">
+                    <img src="../images/svg/Google.svg" alt="Google">
+                    <h4 id="regGoogle">Registrarse con Google</h4>
+                </button>
+            </div>
+            <div class="logAlternativa">
+                <h3 id="beforeAlternativa">¿Ya tienes una cuenta? <span id="logAlternativa">Iniciá sesión</span></h3>
+            </div>
         </div>
-        <div class="botones">
-            <button class="botonRedes" type="submit">
-                <img src="../images/svg/Facebook.svg" alt="Facebook">
-                <span>
-                    <h4 class="logRedes">Iniciar Sesión con Facebook</h4>
-                </span>
-            </button>
-            <button class="botonRedes" type="submit">
-                <img src="../images/svg/Google.svg" alt="Google">
-                <span>
-                    <h4 class="logRedes">Iniciar Sesión con Google</h4>
-                </span>
-            </button>
+        <div class="register login">
+            <div class="reg">
+                <h2 id="registerTitulo">Iniciar sesion</h2>
+                <form action="index.html" class="formRegister formLogin">
+
+                    <div class="labelContainer correo">
+                        <label for="correo">
+                            <img src="../images/svg/Labels/Sobre.svg" alt="sobre">
+                            <h5>Correo electrónico</h5>
+                        </label>
+                        <input type="email" name="correo" placeholder="Inserte su correo electrónico aquí" required>
+                    </div>
+
+                    <div class="labelContainer contraseña">
+                        <label for="contraseña">
+                            <img src="../images/svg/Labels/Candado.svg" alt="sobre">
+                            <h5>Contraseña</h5>
+                        </label>
+                        <input type="password" name="contraseña" placeholder="Inserte su contraseña aquí " required>
+                    </div>
+
+                    <a class="botonRegistrarse" href="index.html">
+                        <button class="boton botonPrimarioCeleste" type="submit">
+                            <h4 id="botonRegistrarse">Iniciar sesion</h4>
+                        </button>
+                    </a>
+
+                </form>
+                <div class="separador">
+                    <img src="../images/svg/Linea.svg" alt="separacion">
+                    <h4>O</h4>
+                    <img src="../images/svg/Linea.svg" alt="separacion">
+                </div>
+                <button class="boton botonSecundarioCeleste" type="submit">
+                    <img src="../images/svg/Facebook.svg" alt="Facebook">
+                    <h4 id="regFacebook">Iniciar sesion con Facebook</h4>
+                </button>
+                <button class="boton botonSecundarioCeleste" type="submit">
+                    <img src="../images/svg/Google.svg" alt="Google">
+                    <h4 id="regGoogle">Iniciar sesion con Google</h4>
+                </button>
+            </div>
+            <div class="logAlternativa">
+                <h3 id="beforeAlternativa">¿No tienes una cuenta? <span id="logAlternativa">Registrate</span></h3>
+            </div>
         </div>
-        <h4>¿Olvidaste tu contraseña?</h4>
-    </div>
 
-    <div class="registrar">
-        <h2>¿No tienes una cuenta? Registrate</h2>
-    </div>
+    </main>
 
+    <footer>
+        <div class="footSuperior">
+            <div>
+                <a class="footSuperiorIzq" href="index.html">
+                    <img src="../images/svg/Diamante-transformed-PhotoRoom 1.svg" alt="Logo">
+                    <h2>Joya</h2>
+                </a>
+            </div>
+            <div>
+                <h2>© 2017 - 2023 Joya Inc.</h2>
+            </div>
+            <div class="footRedes">
+                <img src="../images/svg/Facebook.svg" alt="Logo">
+                <img src="../images/svg/Instagram.svg" alt="Logo">
+                <img src="../images/svg/Twitter.svg" alt="Logo">
+            </div>
+        </div>
+        <img class="footMedio" src="../images/svg/Linea.svg" alt="logo">
+        <div class="footInferior">
+            <div>
+                <h3>Categorías</h3>
+                <h5>Valoraciones</h5>
+                <h5>Lanzamientos</h5>
+                <h5>Top 100 juegos</h5>
+                <h5>Todos los juegos</h5>
+            </div>
+            <div>
+                <h3>Mi cuenta</h3>
+                <h5>Logros</h5>
+                <h5>Ingresá</h5>
+                <h5>Idiomas y preferencias</h5>
+                <h5>Registro de transacciones</h5>
+            </div>
+            <div>
+                <h3>Acerca de nosotros</h3>
+                <h5>Contacto</h5>
+                <h5>Descripción breve</h5>
+                <h5>Premios y reconocimientos</h5>
+                <h5>Comentarios de la comunidad</h5>
+            </div>
+            <div>
+                <h3>Ayuda</h3>
+                <h5>Soporte técnico</h5>
+                <h5>Problemas comunes</h5>
+                <h5>Términos y condiciones</h5>
+                <h5>Preguntas frecuentes(FAQ)</h5>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>
