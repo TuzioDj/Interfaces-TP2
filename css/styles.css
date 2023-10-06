@@ -10,12 +10,19 @@ body {
     background-color: var(--violeta-3);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    right: 0;
 }
-
 main{
-    margin-bottom: 10%;
-}
+    flex-grow: 1;
+    transition: 500ms ease;
+    min-height: 100vh;
 
+}
+.mainMenuHamburguesaAbierto{
+
+}
 h1 {
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -135,6 +142,7 @@ a {
     height: 60px;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
 
 .iconoMedio {
@@ -169,9 +177,6 @@ a {
 
 
 
-
-
-
 .menuHamburguesa {
     overflow: hidden;
     transition: 500ms;
@@ -180,11 +185,12 @@ a {
     justify-content: space-between;
     align-items: start;
     background-color: var(--violeta-2);
-    position: sticky;
+    position: fixed;
     left: 0;
     top: 60px;
     width: 0;
     height: calc(100vh - 60px);
+    z-index: 100;
 }
 
 .menuHamburguesaAbierto {
@@ -273,6 +279,7 @@ ul {
     right: 0;
     top: 60px;
     width: 200px;
+    z-index: 100;
 }
 
 .perfilHamburguesaAbierto {
@@ -304,7 +311,9 @@ ul {
 
 
 
-
+.titulo{
+    margin: 30px 0;
+}
 
 
 
@@ -314,7 +323,6 @@ footer {
     background-color: var(--violeta-2);
     display: flex;
     width: 100%;
-    position: absolute;
     bottom: 0;
     padding: 53px 0;
     flex-direction: column;

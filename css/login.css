@@ -1,19 +1,14 @@
 /*Login*/
-.loginMain {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 .register{
     position: absolute;
     left: 50%;
-    top: 120px;
     transform: translate(-50%, 0);
     transition: 1s;
 }
 .login{
+    pointer-events: none;
     opacity: 0;
+    height: 0;
 }
 
 .reg {
@@ -24,7 +19,7 @@
     width: 650px;
     height: auto;
     padding: 20px;
-    margin-top: 120px;
+    margin-top: 60px;
     margin-bottom: 15px;
     border-radius: 30px;
     background: var(--violeta-2);
@@ -227,7 +222,7 @@ input {
     cursor: pointer;
 }
 
-#logAlternativa {
+.botonAlternativa {
     cursor: pointer;
     text-decoration: underline;
 }

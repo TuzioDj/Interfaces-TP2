@@ -1,3 +1,6 @@
+main{
+    text-align: center;
+}
 .card {
     box-sizing: border-box;
     border-radius: 15px;
@@ -5,7 +8,9 @@
     width: 250px;
     height: fit-content;
 }
-
+.cardContainer{
+    position: relative;
+}
 .cardPrecio {
     display: flex;
     align-items: center;
@@ -88,9 +93,8 @@
 
 
 .bigCard {
-    width: 800px;
+    width: 100%;
     position: relative;
-    cursor: pointer;
 }
 
 .bigCardShadow {
@@ -109,76 +113,122 @@
 }
 
 
-.cardImage{
+.cardImage {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.playIcon{
+.playIcon {
     width: 20%;
     padding-bottom: 5%;
 }
-.playIcon img{
+
+.playIcon img {
     width: 100%;
     display: block;
 }
-.bigCardInfo h3, h1{
+
+.bigCardInfo h3,
+h1 {
     margin: 5px;
 }
-.bigCardInfo{
+
+.bigCardInfo {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     bottom: 0;
     left: 0;
     padding: 20px;
     opacity: 0;
     transition: 300ms;
 }
-.bigCard:hover .bigCardShadow,.bigCard:hover .bigCardInfo {
-    opacity: 1;
-}
-a{
-    display: block;
-    width: fit-content;
-}
 
 
-.bigCarrousel{
-    padding: 2rem;
+.carousel {
+    width: 100%;
 }
-.bigCarrouselContainer{
+
+.carousel a{
+    cursor: default;
+}
+
+.carouselContainer {
+    aspect-ratio: 17.7 / 6;
+    align-items: center;
+    display: flex;
+    max-width: 100%;
     position: relative;
-    max-width: 60%;
-    margin: 0 auto;
 }
-.bigCarrouselImages{
-    display: flex;
-    aspect-ratio: 16 / 9;
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    border-radius: 15px;
-}
-.bigCarrouselImages img{
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-    object-fit: cover;
-}
-.bigCarrouselSliders{
-    display: flex;
-    column-gap: 1rem;
+
+.carouselItem {
+    opacity: 0;
     position: absolute;
-    bottom: 1.25rem;
-    left: 50%;
-    transform: translateX(-50%);
+    transition: all 500ms ease-in-out;
+    z-index: 0;
+    border-radius: 30px;
+    background-size: contain;
+}
+
+.carouselItem1,
+.carouselItem3 {
+    opacity: 0.8;
+    width: 50%;
     z-index: 1;
 }
-.bigCarrouselSliders a{
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: #ffffff91;
+
+.carouselItem1 {
+    left: 30%;
+    transform: translatex(-50%);
 }
-.bigCarrouselSliders a:hover{
-    background-color: white;
+
+.carouselItem2 {
+    box-shadow: -2px 5px 33px 6px #000000ab;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    z-index: 2;
+}
+
+.carouselItem2:hover .bigCardShadow,
+.carouselItem2:hover .bigCard,
+.carouselItem2:hover .bigCardInfo {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.carouselItem3 {
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.carouselControlsContainer button {
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    cursor: pointer;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background-color: var(--violeta1);
+    width: 4%;
+    border: none;
+    z-index: 3;
+}
+
+.carouselControlPrevious {
+    left: 6%;
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Izquierda.svg);
+}
+.carouselControlNext{
+    right: 6%;
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Derecha.svg);
 }

@@ -1,3 +1,4 @@
+var pagina = document.querySelector('main')
 var botonMenuHamburguesa = document.getElementById('botonMenuHamburguesa')
 var menuHamburguesa = document.getElementById('menuHamburguesa')
 var imagen1 = "../images/svg/Hamburguesa cerrada.svg"
@@ -9,10 +10,12 @@ botonMenuHamburguesa.addEventListener('click', function () {
     if (contadorImagen == 0) {
         botonMenuHamburguesa.src = imagen2;
         contadorImagen = 1;
+        pagina.style.paddingLeft = '60px'
     }
     else {
         botonMenuHamburguesa.src = imagen1;
         contadorImagen = 0;
+        pagina.style.paddingLeft = '0'
     }
 })
 
