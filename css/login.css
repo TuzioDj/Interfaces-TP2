@@ -185,10 +185,7 @@
     align-items: center;
 }
 
-.boton h4 {
-    margin: 0;
-    padding: 10px 15px;
-}
+
 
 .logAlternativa {
     display: flex;
@@ -200,23 +197,7 @@
     background: #2D0075;
 }
 
-input::placeholder {
-    font-family: Rubik;
-    font-weight: 800;
-    color: #0000005e;
-}
 
-input:focus {
-    border: var(--celeste0) 2px solid;
-    outline: none;
-}
-
-input {
-    font-family: Rubik;
-    font-weight: bold;
-    border: transparent 2px solid;
-    transition: border 200ms ease;
-}
 
 #olvidoContraseña {
     cursor: pointer;

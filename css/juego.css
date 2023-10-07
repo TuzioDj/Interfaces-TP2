@@ -1,25 +1,208 @@
 .juego {
+    margin: 40px auto auto auto;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-
 }
 
 .imagen {
-    max-width: 50%;
-    height: 435px;
+    width: 100%;
     border-radius: 15px;
 }
 
 .instrucciones {
+    flex: 1;
+    align-self: stretch;
     display: flex;
-    width: 575px;
-    height: 435px;
-    padding: 5px;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
     flex-direction: column;
     border-radius: 15px;
     background: #2D0075;
     box-shadow: -8px 8px 35px 2px rgba(0, 0, 0, 0.25);
-    text-align: center;
+}
+.instrucciones h3, .instrucciones p{
+    margin: 3% 10px;
+}
+
+
+.pantallaJuego {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.caracJuego {
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+}
+
+.barraInferior {
+    display: flex;
+    padding: 14px 13px 13.005px 13px;
+    height: 25px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 15px 15px;
+    background: #7724FF;
+}
+
+.btnsBarraInferior {
+    position: relative;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    gap: 15px;
+}
+.btnsBarraInferior img{
+    cursor: pointer;
+}
+
+.detalles{
+    margin: auto;
+    width: 70%;
+    display: flex;
+}
+
+.detallesIzquierda {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.descripcion{
+    margin-bottom: 40px;
+}
+.galeria{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px;
+    gap: 15px;
+}
+.galeria img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.caracteristicas h5 {
+    color: rgba(255, 255, 255, 0.70);
+}
+.comentar, .cajaComentarios{
+    margin-bottom: 30px;
+}
+
+.comentar h2, .cajaComentarios h2{
+    padding: 15px;
+}
+.comentario {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    text-align: initial;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.comentarioNuevo{
+}
+.comentario .separacionMenuHamburguesa {
+    width: 100%;
+}
+
+.comentario input {
+    width: -webkit-fill-available;
+    display: flex;
+    padding: 10px 13px 30px 13px;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 15px;
+    background: #D3B8FF;
+}
+
+.comentario button {
+    margin-left: auto;
+}
+
+.cajaComentarios {
+    gap: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.cajaComentarios > h3{
+    padding: 15px 0;
+}
+.perfil {
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.cajaComentarios p {
+    display: flex;
+    color: rgba(255, 255, 255, 0.45);
+    justify-content: center;
+    align-items: center;
+}
+
+.valoracion {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comentario .valoracion img {
+    width: 50px;
+    height: 30px;
+    align-items: center;
+}
+
+.copiarUrl {
+    transform: translate(-50%, 0);
+    display: flex;
+    position: absolute;
+    top: 15px;
+    transition: 500ms;
+    height: 0;
+    overflow: hidden;
+    width: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--violeta-2);
+    border-radius: 0px;
+}
+
+.copiarUrl .redes {
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+}
+
+.copiarUrl .url {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--violeta1);
+    border-radius: 20px;
+}
+
+.copiarUrlAbierto{
+    width: 280px;
+    height: 155px;
+    padding: 18px;
+    border-radius: 30px;
 }

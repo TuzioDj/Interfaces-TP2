@@ -14,15 +14,15 @@ body {
     flex-direction: column;
     right: 0;
 }
-main{
+
+main {
     flex-grow: 1;
     transition: 500ms ease;
     min-height: 100vh;
 
 }
-.mainMenuHamburguesaAbierto{
 
-}
+
 h1 {
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -61,6 +61,7 @@ h4 {
 }
 
 h5 {
+    margin: 0.7em 0; 
     color: #FFF;
     font-family: Rubik;
     font-size: 14px;
@@ -91,7 +92,7 @@ a {
     --violeta1: #A36BFF;
     --violeta2: #D3B8FF;
     --violeta3: #EFE5FF;
-    
+
     --celeste-3: #003C47;
     --celeste-2: #007D94;
     --celeste-1: #00BADB;
@@ -112,23 +113,39 @@ a {
     background-color: var(--celeste0);
     text-align: center;
 }
-.boton img{
-    width: 24px;
+
+.boton img {
+    max-width: 24px;
+    max-height: 24px;
 }
-.botonPrimarioCeleste{
-    background-color: var(--celeste0);
+.boton h4 {
+    margin: 0;
+    padding: 10px 15px;
+}
+
+.botonPrimarioCeleste {
+    background-color: var(--celeste-1);
     border: none;
 }
-.botonSecundarioCeleste{
-    border: var(--celeste0) 2px solid;
+
+.botonSecundarioCeleste {
+    border: var(--celeste-1) 2px solid;
     background-color: white;
 }
-.botonSecundarioCeleste h4{
-    color: var(--celeste0);
+
+.botonSecundarioCeleste h4 {
+    color: var(--celeste-1);
 }
-.botonSecundarioCeleste img{
+
+.botonSecundarioCeleste img, .botonPrimarioVioleta img{
     padding-left: 15px;
 }
+
+.botonPrimarioVioleta{
+    background-color: var(--violeta0);
+    border: none;
+}
+
 
 
 
@@ -309,12 +326,36 @@ ul {
     cursor: pointer;
 }
 
-
-
-.titulo{
-    margin: 30px 0;
+.container{
+    margin: 0 60px;
 }
 
+.titulo {
+    text-align: start;
+    padding: 15px;
+    margin: 0;
+}
+.tituloCentrado{
+    text-align: center;
+}
+
+input::placeholder {
+    font-family: Rubik;
+    font-weight: 800;
+    color: #0000005e;
+}
+
+input:focus {
+    border: var(--celeste0) 2px solid;
+    outline: none;
+}
+
+input {
+    font-family: Rubik;
+    font-weight: bold;
+    border: transparent 2px solid;
+    transition: border 200ms ease;
+}
 
 
 
@@ -376,5 +417,3 @@ footer .footInferior h3 {
 footer .footInferior h5 {
     margin: 5px 0;
 }
-
-

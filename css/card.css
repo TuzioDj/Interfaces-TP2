@@ -1,7 +1,7 @@
 main{
     text-align: center;
 }
-.card {
+.card {    
     box-sizing: border-box;
     border-radius: 15px;
     overflow: hidden;
@@ -52,6 +52,7 @@ main{
 }
 
 .cardButton {
+    aspect-ratio: 1 / 1;
     cursor: pointer;
     background-image: url(../images/svg/Jugar.svg);
     background-size: 50%;
@@ -63,7 +64,6 @@ main{
     border-radius: 100px;
     background-color: black;
     width: 45px;
-    height: 45px;
 }
 
 .cardButtonPaga {
@@ -79,15 +79,21 @@ main{
 .cardButtonAñadidoAlCarrito:hover {
     background-image: url(../images/svg/Eliminar\ del\ carrito.svg);
 }
-
+.cardTextos{
+    width: 75%;
+    overflow: hidden;
+}
 .cardNombre {
     color: black;
-    margin: 0;
 }
 
 .cardCategoria {
     color: #00000050;
+}
+
+.cardCategoria, .cardNombre{
     margin: 0;
+    text-align: initial;
 }
 
 
@@ -95,6 +101,7 @@ main{
 .bigCard {
     width: 100%;
     position: relative;
+    margin: 0;
 }
 
 .bigCardShadow {
@@ -147,8 +154,45 @@ h1 {
 }
 
 
+
+
+.carouselChico{
+    position: relative;
+    width: 100%;
+    margin: 0 auto 30px auto;
+}
+
+.carouselChicoContainer{
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.carouselChicoCardContainer{
+    width: fit-content;
+    position: relative;
+    align-items: center;
+    display: flex;
+    max-width: fit-content;
+    transition: 500ms ease;
+    gap: 10px;
+}
+
+
+
+
+
+
+
 .carousel {
     width: 100%;
+    margin: 0 auto 30px auto;
+
 }
 
 .carousel a{
@@ -156,7 +200,7 @@ h1 {
 }
 
 .carouselContainer {
-    aspect-ratio: 17.7 / 6;
+    aspect-ratio: 15 / 6;
     align-items: center;
     display: flex;
     max-width: 100%;
@@ -175,7 +219,7 @@ h1 {
 .carouselItem1,
 .carouselItem3 {
     opacity: 0.8;
-    width: 50%;
+    width: 60%;
     z-index: 1;
 }
 
@@ -189,7 +233,7 @@ h1 {
     opacity: 1;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 70%;
     z-index: 2;
 }
 
@@ -205,10 +249,10 @@ h1 {
     transform: translateX(-50%);
 }
 
-.carouselControlsContainer button {
+.carouselControlsContainer button, .carouselChicoControls button {
     aspect-ratio: 1 / 1;
     position: absolute;
-    transform: translateY(-50%);
+    transform: translate(0, -50%);
     top: 50%;
     cursor: pointer;
     background-size: 50%;
@@ -224,11 +268,27 @@ h1 {
     z-index: 3;
 }
 
+.carouselChicoControls button{
+    width: 3%;
+}
+
+
 .carouselControlPrevious {
-    left: 6%;
+    left: 2%;
     background-image: url(../images/svg/Botones\ carrousel/Flecha\ Izquierda.svg);
 }
 .carouselControlNext{
-    right: 6%;
+    right: 2%;
     background-image: url(../images/svg/Botones\ carrousel/Flecha\ Derecha.svg);
+}
+.carouselChicoControls .carouselChicoButtonRight{
+    transform: translate(70%, -50%);
+    right: 5px;
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Derecha.svg);
+}
+
+.carouselChicoControls .carouselChicoButtonLeft{
+    transform: translate(-70%, -50%);
+    left: 5px;
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Izquierda.svg);
 }
