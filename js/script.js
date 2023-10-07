@@ -25,3 +25,4 @@ var botonPerfilHamburguesa = document.getElementById('botonPerfilHamburguesa')
 botonPerfilHamburguesa.addEventListener('click', function () {
     perfilHamburguesa.classList.toggle('perfilHamburguesaAbierto');
 })
+

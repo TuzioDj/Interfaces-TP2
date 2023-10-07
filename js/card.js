@@ -13,13 +13,14 @@ const carouselControls = ['Previous', 'Next']
 const carouselItems = document.querySelectorAll('.carouselItem')
 
 class Carousel {
-    constructor(container, items, controls){
+    constructor(container, items, controls) {
         this.container = container
         this.controls = controls
         this.items = [...items]
+        this.startX = null;
     }
 
-    updateCarousel(){
+    updateCarousel() {
         this.items.forEach(item => {
             item.classList.remove('carouselItem1')
             item.classList.remove('carouselItem2')
@@ -28,34 +29,58 @@ class Carousel {
         });
 
         this.items.slice(0, 3).forEach((item, i) => {
-            item.classList.add(`carouselItem${i+1}`)
+            item.classList.add(`carouselItem${i + 1}`)
             if (!item.classList.contains('carouselItem2')) {
                 item.addEventListener('click', this.deshabilitarEnlace)
             }
         });
     }
-    deshabilitarEnlace(event){
+    deshabilitarEnlace(event) {
         event.preventDefault();
     }
-    setCurrentState(direction){
+    setCurrentState(direction) {
         if (direction.className == 'carouselControlPrevious') {
             this.items.unshift(this.items.pop())
         }
-        else{
+        else {
             this.items.push(this.items.shift())
         }
         this.updateCarousel();
     }
+    setupTouchEvents() {
+        this.container.addEventListener('touchstart', (e) => {
+            this.startX = e.touches[0].clientX;
+        });
 
-    setControls(){
+        this.container.addEventListener('touchmove', (e) => {
+            if (this.startX !== null) {
+                const currentX = e.touches[0].clientX;
+                const deltaX = this.startX - currentX;
+
+                // Detecta la dirección del desplazamiento
+                if (deltaX > 0) {
+                    // Desplazamiento hacia la izquierda (siguiente)
+                    this.setCurrentState('Next');
+                } else if (deltaX < 0) {
+                    var state = {};
+                    state.className = "carouselControlPrevious"
+                    this.setCurrentState(state);
+                    // Desplazamiento hacia la derecha (anterior)
+                }
+
+                this.startX = null;
+            }
+        });
+    }
+    setControls() {
         this.controls.forEach(control => {
             carouselControlsContainer.appendChild(document.createElement('button')).className = `carouselControl${control}`
         });
     }
 
-    useControls(){
+    useControls() {
         const triggers = [...carouselControlsContainer.childNodes]
-        triggers.forEach(control=> {
+        triggers.forEach(control => {
             control.addEventListener('click', e => {
                 e.preventDefault();
                 this.setCurrentState(control);
@@ -63,7 +88,6 @@ class Carousel {
         });
     }
 }
-
 const carouselesChicos = document.querySelectorAll('.carouselChico');
 
 carouselesChicos.forEach(carouselChico => {
@@ -83,6 +107,7 @@ carouselesChicos.forEach(carouselChico => {
 
 const carouselExample = new Carousel(carouselContainer,carouselItems,carouselControls)
 carouselExample.setControls()
+carouselExample.setupTouchEvents()
 carouselExample.useControls()
 carouselExample.updateCarousel()
 })
