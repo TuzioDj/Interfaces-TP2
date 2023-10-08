@@ -12,17 +12,11 @@
 </head>
 
 <body>
-    <div class="loading-container">
-        <div class="loading-spinner"></div>
-        <div class="loading-text">
-            <span id="loading-progress">0</span>%
-        </div>
-    </div>
 
     <header class="navbar">
         <div class="navbarParte">
             <a href="index.html" class="iconoMedio">
-               <img src="../images/svg/Diamante-transformed-PhotoRoom 1.svg" alt="Logo">
+                <img src="../images/svg/Diamante-transformed-PhotoRoom 1.svg" alt="Logo">
             </a>
         </div>
 
@@ -91,9 +85,13 @@
                         <input type="password" name="confirmarContraseña"
                             placeholder="Inserte su contraseña nuevamente aquí" required>
                     </div>
+                    <div class="captcha">
+                        <input type="checkbox" class="robot" name="robot" value="off" required>
+                        <p>No soy un robot</p>
+                        <img src="../images/Captcha/reCaptcha.png" alt="reCaptcha">
+                    </div>
 
-
-                    <a class="botonRegistrarse" href="index.html">
+                    <a class="botonRegistrarse" href="login.html">
                         <button class="boton botonPrimarioCeleste" type="submit">
                             <h4 id="botonRegistrarse">Registrarse</h4>
                         </button>
@@ -115,7 +113,8 @@
                 </button>
             </div>
             <div class="logAlternativa">
-                <h3 id="beforeAlternativa">¿Ya tienes una cuenta? <span class="botonAlternativa">Iniciá sesión</span></h3>
+                <h3 id="beforeAlternativa">¿Ya tienes una cuenta? <span class="botonAlternativa">Iniciá sesión</span>
+                </h3>
             </div>
         </div>
         <div class="register login">
@@ -138,10 +137,6 @@
                         </label>
                         <input type="password" name="contraseña" placeholder="Inserte su contraseña aquí " required>
                     </div>
-                    <div class="captcha">
-                        
-                    </div>
-
                     <a class="botonRegistrarse" href="index.html">
                         <button class="boton botonPrimarioCeleste" type="submit">
                             <h4 id="botonRegistrarse">Iniciar sesion</h4>
