@@ -1,4 +1,4 @@
-const register = document.querySelectorAll('.register');
+const form = document.querySelectorAll('.form');
 const botonAlternativa = document.querySelectorAll('.botonAlternativa');
 const botonesRegistro = document.querySelectorAll('.botonRegistrarse');
 var waitTime = 4000
@@ -30,8 +30,8 @@ botonAlternativa.forEach(boton => {
 
 
 function cambioDeForm() {
-    register.forEach(element => {
-        element.classList.toggle('login')
+    form.forEach(element => {
+        element.classList.toggle('formHidden')
     });
 }
 
