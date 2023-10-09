@@ -6,6 +6,12 @@
     transform: translate(-50%, 0);
     transition: 1s;
 }
+.registerTitulo, .registerTitulo p{
+    margin: 2px;
+}
+ p{
+    color: rgba(255, 255, 255, 0.35);
+}
 .login{
     pointer-events: none;
     opacity: 0;
@@ -230,7 +236,7 @@
     cursor: pointer;
 }
 
-.botonAlternativa {
+span.botonAlternativa {
     cursor: pointer;
     text-decoration: underline;
 }

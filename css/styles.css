@@ -15,63 +15,47 @@ body {
     right: 0;
 }
 
+button {
+    font-family: 'Rubik', sans-serif;
+}
+
 main {
     flex-grow: 1;
     transition: 500ms ease;
     min-height: 100vh;
-
 }
 
 
 h1 {
     color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Rubik;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
 }
 
 h2 {
     color: #FFF;
-    font-family: Rubik;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
 }
 
 h3 {
     color: #FFF;
-    font-family: Rubik;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
 }
 
 h4 {
     color: #FFF;
-    font-family: Rubik;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
 }
 
 h5 {
-    margin: 0.7em 0; 
     color: #FFF;
-    font-family: Rubik;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
 }
 
 p {
     color: #FFF;
-    font-family: Rubik;
     font-size: 12px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
 }
 
 a {
@@ -96,6 +80,7 @@ a {
     --celeste2: #B2F3FF;
     --celeste3: #E5FBFF;
 }
+
 .loading-container {
     display: flex;
     flex-direction: column;
@@ -127,9 +112,63 @@ a {
 
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
+@keyframes animacionBotonCeleste {
+    0% {
+        background-color: var(--celeste0);
+    }
+
+    50% {
+        scale: 1.02;
+        background-color: var(--celeste1);
+    }
+
+    100% {
+        background-color: var(--celeste0);
+        scale: 1;
+    }
+}
+
+@keyframes animacionBotonVioleta {
+    0% {
+        background-color: var(--violeta0);
+    }
+
+    50% {
+        scale: 1.02;
+        background-color: var(--violeta-1);
+    }
+
+    100% {
+        background-color: var(--violeta0);
+        scale: 1;
+    }
+}
+
+@keyframes animacionBotonSecundario {
+    0% {
+        border-color: var(--celeste-1);
+    }
+
+    50% {
+        transform: scale(1.02);
+        border-color: var(--celeste-2);
+    }
+
+    100% {
+        border-color: var(--celeste-1);
+        transform: scale(1);
+    }
+}
+
 .boton {
     display: flex;
     cursor: pointer;
@@ -142,10 +181,15 @@ a {
     text-align: center;
 }
 
-.boton img {
+.boton img, .boton svg {
     max-width: 24px;
     max-height: 24px;
+    padding-left: 15px;
+    fill: var(--celeste-1);
+    transition: fill 0.5s;
 }
+
+
 .boton h4 {
     margin: 0;
     padding: 10px 15px;
@@ -156,22 +200,37 @@ a {
     border: none;
 }
 
+.botonPrimarioCeleste:hover {
+    animation: animacionBotonCeleste 1s infinite;
+}
+
 .botonSecundarioCeleste {
     border: var(--celeste-1) 2px solid;
     background-color: white;
+    transition: all 500ms ease;
+}
+.botonSecundarioCeleste:hover svg{
+    fill: white;
+}
+.botonSecundarioCeleste:hover h4{
+    color: white;
+}
+.botonSecundarioCeleste:hover {
+    background-color: var(--celeste-1);
+    animation: animacionBotonSecundario 1s infinite;
 }
 
 .botonSecundarioCeleste h4 {
     color: var(--celeste-1);
 }
 
-.botonSecundarioCeleste img, .botonPrimarioVioleta img{
-    padding-left: 15px;
-}
-
-.botonPrimarioVioleta{
+.botonPrimarioVioleta {
     background-color: var(--violeta0);
     border: none;
+}
+
+.botonPrimarioVioleta:hover {
+    animation: animacionBotonVioleta 1s infinite;
 }
 
 
@@ -307,7 +366,7 @@ ul {
     justify-content: center;
 }
 
-.separacionMenuHamburguesa {
+.separacion {
     width: 90%;
     height: 2px;
 }
@@ -354,7 +413,7 @@ ul {
     cursor: pointer;
 }
 
-.container{
+.container {
     margin: 0 60px;
 }
 
@@ -363,7 +422,8 @@ ul {
     padding: 15px;
     margin: 0;
 }
-.tituloCentrado{
+
+.tituloCentrado {
     text-align: center;
 }
 
@@ -439,9 +499,10 @@ footer .footInferior {
     justify-content: space-between;
 }
 
-footer .footInferior > *{
+footer .footInferior>* {
     margin: 0 5px;
 }
+
 footer .footInferior h3 {
     margin-bottom: 10px;
 }
@@ -451,25 +512,30 @@ footer .footInferior h5 {
 }
 
 @media screen and (max-width: 1280px) {
-    body{
+    body {
         font-size: 15px;
     }
-    p{
+
+    p {
         font-weight: 300;
     }
-    .container{
+
+    .container {
         margin: 0 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
     .menuHamburguesaAbierto {
         width: 175px;
     }
-    .menuHamburguesaAbierto h4{
+
+    .menuHamburguesaAbierto h4 {
         opacity: 1;
     }
-    .hamburguesaArriba{
+
+    .hamburguesaArriba {
         overflow-y: scroll;
         overflow-x: hidden;
     }

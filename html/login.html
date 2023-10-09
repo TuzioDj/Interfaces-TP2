@@ -8,6 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="../images/svg/Diamante-transformed-PhotoRoom 1.svg">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/Pruebas.css">
+
 
 </head>
 
@@ -26,7 +28,8 @@
     <main>
         <div class="register">
             <div class="reg">
-                <h2 id="registerTitulo">Registrarse</h2>
+                <h2 class="registerTitulo">Registrarse</h2>
+                <p class="registerTitulo"><span class="asterisco">*</span>Campo obligatorio</p>
                 <form action="index.html" class="formRegister">
 
                     <div class="labelContainer nombre">
@@ -91,8 +94,8 @@
                         <img src="../images/Captcha/reCaptcha.png" alt="reCaptcha">
                     </div>
 
-                    <a class="botonRegistrarse" href="login.html">
-                        <button class="boton botonPrimarioCeleste" type="submit">
+                    <a class="botonRegistrarse">
+                        <button class="boton botonPrimarioCeleste botonAlternativa" type="submit">
                             <h4 id="botonRegistrarse">Registrarse</h4>
                         </button>
                     </a>
@@ -104,11 +107,30 @@
                     <img src="../images/svg/Linea.svg" alt="separacion">
                 </div>
                 <button class="boton botonSecundarioCeleste" type="submit">
-                    <img src="../images/svg/Facebook boton.svg" alt="Facebook">
+                    <svg width="51" height="50" viewBox="0 0 51 50" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M50.2388 25.0186C50.2388 11.2114 39.046 0.0185547 25.2388 0.0185547C11.4316 0.0185547 0.23877 11.2114 0.23877 25.0186C0.23877 37.4968 9.38092 47.8393 21.3325 49.7148V32.2451H14.9849V25.0186H21.3325V19.5108C21.3325 13.2451 25.0648 9.78418 30.7753 9.78418C33.5105 9.78418 36.3715 10.2725 36.3715 10.2725V16.4248H33.219C30.1135 16.4248 29.145 18.3519 29.145 20.3291V25.0186H36.0785L34.9703 32.2451H29.145V49.7148C41.0965 47.8393 50.2388 37.4968 50.2388 25.0186Z">
+                        </path>
+                    </svg>
                     <h4 id="regFacebook">Registrarse con Facebook</h4>
                 </button>
                 <button class="boton botonSecundarioCeleste" type="submit">
-                    <img src="../images/svg/Google.svg" alt="Google">
+                    <svg width="60" height="61" viewBox="0 0 60 61" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Property 1=Google">
+                            <path id="Vector"
+                                d="M48.3744 51.2158C53.4563 46.4467 56.388 39.4421 56.388 31.121C56.388 29.1836 56.217 27.3205 55.8994 25.5322H30.588V36.1137H45.0516C44.4164 39.5166 42.5108 42.398 39.6523 44.3353"
+                                stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="Vector_2"
+                                d="M6.59607 42.7705C11.0182 51.6876 20.0824 57.8228 30.5881 57.8228C37.8443 57.8228 43.9278 55.3886 48.3744 51.2157L39.6523 44.3352C37.2579 45.9746 34.2041 46.9681 30.5881 46.9681C23.6006 46.9681 17.6637 42.1742 15.5381 35.7161"
+                                stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="Vector_3"
+                                d="M6.59601 18.2544C4.76364 21.9305 3.71301 26.0787 3.71301 30.5C3.71301 34.9214 4.76364 39.0695 6.59601 42.7456L13.5591 37.2314L15.5381 35.6914C15.0006 34.052 14.683 32.3132 14.683 30.5C14.683 28.6868 15.0006 26.948 15.5381 25.3087"
+                                stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="Vector_4"
+                                d="M30.5881 14.0566C34.5461 14.0566 38.0642 15.4475 40.8738 18.1303L48.5698 10.306C43.9033 5.88463 37.8442 3.17725 30.5879 3.17725C20.0823 3.17725 11.0181 9.31245 6.59595 18.2545L15.5379 25.3088C17.6636 18.8507 23.6006 14.0566 30.5881 14.0566Z"
+                                stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
                     <h4 id="regGoogle">Registrarse con Google</h4>
                 </button>
             </div>
