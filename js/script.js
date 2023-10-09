@@ -1,8 +1,8 @@
 var pagina = document.querySelector('main')
 var botonMenuHamburguesa = document.getElementById('botonMenuHamburguesa')
 var menuHamburguesa = document.getElementById('menuHamburguesa')
-var imagen1 = "../images/svg/Hamburguesa cerrada.svg"
-var imagen2 = "../images/svg/Hamburguesa abierta.svg"
+var imagen1 = "images/svg/Hamburguesa cerrada.svg"
+var imagen2 = "images/svg/Hamburguesa abierta.svg"
 var contadorImagen = 0;
 
 botonMenuHamburguesa.addEventListener('click', function () {
