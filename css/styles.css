@@ -322,12 +322,15 @@ ul {
 }
 
 .botonHamburguesa {
+    cursor: pointer;
     padding: 0 10px 0 5px;
     width: fit-content;
     display: flex;
     flex-direction: row;
 }
-
+.botonHamburguesa:hover>h4{
+    transform: translateX(10px);
+}
 .hamburguesaArriba {
     height: auto;
     width: 100%;
