@@ -254,7 +254,7 @@ span.botonAlternativa {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,17 +266,17 @@ span.botonAlternativa {
 }
 
 .successAnimation h2{
-    color: #4bb71b;
+    color: #4fd614;
     margin: 5px 0;
 }
 .checkmark {
-    width: 25%;
+    width: 5%;
     border-radius: 50%;
     display: block;
     stroke-width: 2;
-    stroke: #4bb71b;
+    stroke: #4fd614;
     stroke-miterlimit: 10;
-    box-shadow: inset 0px 0px 0px #4bb71b;
+    box-shadow: inset 0px 0px 0px #4fd614;
     position: relative;
     margin: 0 auto;
 }
@@ -290,7 +290,7 @@ span.botonAlternativa {
     stroke-dashoffset: 166;
     stroke-width: 2;
     stroke-miterlimit: 10;
-    stroke: #4bb71b;
+    stroke: #4fd614;
 }
 
 .checkmarkCircleAnimation {
@@ -327,7 +327,7 @@ span.botonAlternativa {
 
 @keyframes fill {
     100% {
-        box-shadow: inset 0px 0px 0px 5px #4bb71b;
+        box-shadow: inset 0px 0px 0px 5px #4fd614;
     }
 }
 
