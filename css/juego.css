@@ -126,10 +126,11 @@
     gap: 15px;
 }
 
-.galeria>img {
+.galeria>img,.galeria>iframe {
     width: 100%;
     border-radius: 20px;
 }
+
 
 .comentar,
 .cajaComentarios {
