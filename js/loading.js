@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const intervalo = 50; 
     let progreso = 0;
 
+    document.body.style.overflow = 'hidden'
+
     const actualizarPorcentaje = () => {
         progreso++;
         loadingProgress.textContent = progreso ;
@@ -15,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cargarContenidoPrincipal = () => {
         setTimeout(() => {
             loadingContainer.style.display = "none"; 
+            document.body.style.overflow = 'auto';
         }, 5000); 
 
         const intervaloCarga = setInterval(() => {
