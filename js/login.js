@@ -1,12 +1,37 @@
-var register = document.querySelectorAll('.register');
-var botonAlternativa = document.querySelectorAll('.botonAlternativa');
+const register = document.querySelectorAll('.register');
+const botonAlternativa = document.querySelectorAll('.botonAlternativa');
+const botonesRegistro = document.querySelectorAll('.botonRegistrarse');
+var waitTime = 4000
+const successAnimation = document.querySelector('.successAnimation')
+const checkmark = document.querySelector('.checkmark');
+const checkmarkCircle = document.querySelector('.checkmarkCircle');
+const checkmarkCheck = document.querySelector('.checkmarkCheck');
 
-botonAlternativa.forEach(boton => {
-    boton.addEventListener('click', function () {
-        register.forEach(element => {
-            element.classList.toggle('login')
-        });
-    })
+botonesRegistro.forEach(boton => {
+    boton.addEventListener('click', () => {
+        successAnimation.classList.toggle('successAnimationAppear');
+        checkmark.classList.toggle('checkmarkAnimation');
+        checkmarkCircle.classList.toggle('checkmarkCircleAnimation');
+        checkmarkCheck.classList.toggle('checkmarkCheckAnimation');
+        setTimeout(() => {
+            cambioDeForm()
+            successAnimation.classList.toggle('successAnimationAppear');
+            checkmark.classList.toggle('checkmarkAnimation');
+            checkmarkCircle.classList.toggle('checkmarkCircleAnimation');
+            checkmarkCheck.classList.toggle('checkmarkCheckAnimation');    
+        }, waitTime);
+    });
 })
 
+
+botonAlternativa.forEach(boton => {
+    boton.addEventListener('click', cambioDeForm)
+})
+
+
+function cambioDeForm() {
+    register.forEach(element => {
+        element.classList.toggle('login')
+    });
+}
 

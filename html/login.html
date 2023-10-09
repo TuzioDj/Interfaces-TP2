@@ -8,12 +8,19 @@
     <link rel="icon" type="image/svg+xml" href="../images/svg/Diamante-transformed-PhotoRoom 1.svg">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" type="text/css" href="../css/Pruebas.css">
 
 
 </head>
 
 <body>
+    <div class="successAnimation">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmarkCircle" cx="26" cy="26" r="25" fill="none" />
+            <path class="checkmarkCheck" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+        <h2>Felicidades! Ya estas registrado en Joya</h2>
+        <h2>Ahora inicia sesion</h2>
+    </div>
 
     <header class="navbar">
         <div class="navbarParte">
@@ -30,14 +37,14 @@
             <div class="reg">
                 <h2 class="registerTitulo">Registrarse</h2>
                 <p class="registerTitulo"><span class="asterisco">*</span>Campo obligatorio</p>
-                <form action="index.html" class="formRegister">
+                <form onsubmit="return false;" class="formRegister">
 
                     <div class="labelContainer nombre">
                         <label for="nombre">
                             <img src="../images/svg/Labels/Persona.svg" alt="sobre">
                             <h5>Nombre</h5><span class="asterisco">*</span>
                         </label>
-                        <input type="text" name="nombre" placeholder="Inserte su nombre aquí" required>
+                        <input type="text" name="nombre" placeholder="Inserte su nombre aquí">
                     </div>
 
                     <div class="labelContainer apellido">
@@ -45,7 +52,7 @@
                             <img src="../images/svg/Labels/Persona.svg" alt="sobre">
                             <h5>Apellido</h5><span class="asterisco">*</span>
                         </label>
-                        <input type="text" name="apellido" placeholder="Inserte su apellido electrónico aquí" required>
+                        <input type="text" name="apellido" placeholder="Inserte su apellido electrónico aquí">
                     </div>
 
                     <div class="labelContainer edad">
@@ -53,7 +60,7 @@
                             <img src="../images/svg/Labels/Torta.svg" alt="sobre">
                             <h5>Edad</h5><span class="asterisco">*</span>
                         </label>
-                        <input type="number" name="edad" placeholder="Edad" required>
+                        <input type="number" name="edad" placeholder="Edad">
                     </div>
 
                     <div class="labelContainer correo">
@@ -61,7 +68,7 @@
                             <img src="../images/svg/Labels/Sobre.svg" alt="sobre">
                             <h5>Correo electrónico</h5><span class="asterisco">*</span>
                         </label>
-                        <input type="email" name="correo" placeholder="Inserte su correo electrónico aquí" required>
+                        <input type="email" name="correo" placeholder="Inserte su correo electrónico aquí">
                     </div>
 
                     <div class="labelContainer usuario">
@@ -77,7 +84,7 @@
                             <img src="../images/svg/Labels/Candado.svg" alt="sobre">
                             <h5>Contraseña</h5><span class="asterisco">*</span>
                         </label>
-                        <input type="password" name="contraseña" placeholder="Inserte su contraseña aquí " required>
+                        <input type="password" name="contraseña" placeholder="Inserte su contraseña aquí ">
                     </div>
 
                     <div class="labelContainer confirmarContraseña">
@@ -86,19 +93,17 @@
                             <h5>Confirmar contraseña</h5><span class="asterisco">*</span>
                         </label>
                         <input type="password" name="confirmarContraseña"
-                            placeholder="Inserte su contraseña nuevamente aquí" required>
+                            placeholder="Inserte su contraseña nuevamente aquí">
                     </div>
                     <div class="captcha">
-                        <input type="checkbox" class="robot" name="robot" value="off" required>
+                        <input type="checkbox" class="robot" name="robot" value="off">
                         <p>No soy un robot</p>
                         <img src="../images/Captcha/reCaptcha.png" alt="reCaptcha">
                     </div>
 
-                    <a class="botonRegistrarse">
-                        <button class="boton botonPrimarioCeleste botonAlternativa" type="submit">
-                            <h4 id="botonRegistrarse">Registrarse</h4>
-                        </button>
-                    </a>
+                    <button class="boton botonPrimarioCeleste botonRegistrarse botonForm">
+                        <h4>Registrarse</h4>
+                    </button>
 
                 </form>
                 <div class="separador">
@@ -106,7 +111,7 @@
                     <h4>O</h4>
                     <img src="../images/svg/Linea.svg" alt="separacion">
                 </div>
-                <button class="boton botonSecundarioCeleste" type="submit">
+                <button class="boton botonSecundarioCeleste botonRegistrarse">
                     <svg width="51" height="50" viewBox="0 0 51 50" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50.2388 25.0186C50.2388 11.2114 39.046 0.0185547 25.2388 0.0185547C11.4316 0.0185547 0.23877 11.2114 0.23877 25.0186C0.23877 37.4968 9.38092 47.8393 21.3325 49.7148V32.2451H14.9849V25.0186H21.3325V19.5108C21.3325 13.2451 25.0648 9.78418 30.7753 9.78418C33.5105 9.78418 36.3715 10.2725 36.3715 10.2725V16.4248H33.219C30.1135 16.4248 29.145 18.3519 29.145 20.3291V25.0186H36.0785L34.9703 32.2451H29.145V49.7148C41.0965 47.8393 50.2388 37.4968 50.2388 25.0186Z">
@@ -114,7 +119,7 @@
                     </svg>
                     <h4 id="regFacebook">Registrarse con Facebook</h4>
                 </button>
-                <button class="boton botonSecundarioCeleste" type="submit">
+                <button class="boton botonSecundarioCeleste botonRegistrarse">
                     <svg width="60" height="61" viewBox="0 0 60 61" xmlns="http://www.w3.org/2000/svg">
                         <g id="Property 1=Google">
                             <path id="Vector"
@@ -149,7 +154,7 @@
                             <img src="../images/svg/Labels/Sobre.svg" alt="sobre">
                             <h5>Correo electrónico</h5>
                         </label>
-                        <input type="email" name="correo" placeholder="Inserte su correo electrónico aquí" required>
+                        <input type="email" name="correo" placeholder="Inserte su correo electrónico aquí">
                     </div>
 
                     <div class="labelContainer contraseña">
@@ -157,13 +162,11 @@
                             <img src="../images/svg/Labels/Candado.svg" alt="sobre">
                             <h5>Contraseña</h5>
                         </label>
-                        <input type="password" name="contraseña" placeholder="Inserte su contraseña aquí " required>
+                        <input type="password" name="contraseña" placeholder="Inserte su contraseña aquí ">
                     </div>
-                    <a class="botonRegistrarse" href="index.html">
-                        <button class="boton botonPrimarioCeleste" type="submit">
-                            <h4 id="botonRegistrarse">Iniciar sesion</h4>
-                        </button>
-                    </a>
+                    <button class="boton botonPrimarioCeleste botonForm">
+                        <h4>Iniciar sesion</h4>
+                    </button>
 
                 </form>
                 <div class="separador">
@@ -171,11 +174,11 @@
                     <h4>O</h4>
                     <img src="../images/svg/Linea.svg" alt="separacion">
                 </div>
-                <button class="boton botonSecundarioCeleste" type="submit">
+                <button class="boton botonSecundarioCeleste">
                     <img src="../images/svg/Facebook boton.svg" alt="Facebook">
                     <h4 id="regFacebook">Iniciar sesion con Facebook</h4>
                 </button>
-                <button class="boton botonSecundarioCeleste" type="submit">
+                <button class="boton botonSecundarioCeleste">
                     <img src="../images/svg/Google.svg" alt="Google">
                     <h4 id="regGoogle">Iniciar sesion con Google</h4>
                 </button>
