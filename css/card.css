@@ -291,22 +291,22 @@ main{
 
 .carouselControlPrevious {
     left: 2%;
-    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Izquierda.svg);
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ izquierda.svg);
 }
 .carouselControlNext{
     right: 2%;
-    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Derecha.svg);
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ derecha.svg);
 }
 .carouselChicoControls .carouselChicoButtonRight{
     transform: translate(70%, -50%);
     right: 5px;
-    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Derecha.svg);
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ derecha.svg);
 }
 
 .carouselChicoControls .carouselChicoButtonLeft{
     transform: translate(-70%, -50%);
     left: 5px;
-    background-image: url(../images/svg/Botones\ carrousel/Flecha\ Izquierda.svg);
+    background-image: url(../images/svg/Botones\ carrousel/Flecha\ izquierda.svg);
 }
 
 @media screen and (max-width: 1280px) {
