@@ -261,7 +261,10 @@ a {
     max-width: 50%;
     max-height: 50%;
 }
-
+.fotoPerfil img {
+    max-width: 90%;
+    max-height: 90%;
+}
 .iconoChico {
     display: flex;
     align-items: center;

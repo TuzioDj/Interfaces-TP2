@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="css/gameMenu.css">
+    <link rel="stylesheet" href="css/gameStyle.css">
+    <link rel="stylesheet" href="css/game.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="init_juego" class="contMenu">
+        <div class="gameMen">
+            <div class="size">
+                <h2 class="titulo">Seleccione modo de juego</h2>
+                <label for="html">
+                    <input type="radio" class="cantidad" id="option1" name="boardSize" value="4" checked>
+                    <h3>4 en línea</h3>
+                </label><br>
+                <label for="css">
+                    <input type="radio" class="cantidad" id="option2" name="boardSize" value="5">
+                    <h3>5 en línea</h3>
+                </label><br>
+                <label for="javascript">
+                    <input type="radio" class="cantidad" id="javascript" name="boardSize" value="6">
+                    <h3>6 en línea</h3>
+                </label><br>
+            </div>
+            <button id="btn_play" class="boton botonPrimarioVioleta">
+                <h2>JUGAR</h2>
+            </button>
+        </div>
+    </div>
+
+    <!-- <div class="area ">
+        <ul class="circles ">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="area1">
+        <ul class="circles ">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div> -->
+
+    <div id="contenedor_juego" class="juego inactive">
+        <!-- ACA IRIA JUGABILIDAD-->
+        <div class="options">
+            <a href="#" id="btn_reset" class=""><img class="" id="fichaBtn"
+                    src="/images/4 en Linea/Opciones/Reinicio.png"><h2>Reiniciar</h2></a>
+            <div>
+                <h2 id="cantFichas"></h2>
+
+            </div>
+            <a href="4enLinea.html" id="btn_exit" class=""><img class="" id="fichaBtn"
+                    src="/images/4 en Linea/Opciones/Salir.png"><h2>Salir</h2></a>
+        </div>
+        <div class="gameInfo">
+            <div class="turno" id="player1">
+                <img src="/images/4 en Linea/Tablero/Ficha Homero.png">
+                <h2>Turno de Homero</h2>
+            </div>
+
+            <div id="theWinnerIs" class="inactive">
+                <h2 id="quienGano"></h2>
+                <h2 id="sinTiempo"></h2>
+            </div>
+
+            <div id="tmp">
+                <h2>Tiempo restante</h2>
+                <h2 id="cronometro"></h2>
+            </div>
+            <div class="turno invisible" id="player2">
+                <img src="/images/4 en Linea/Tablero/Ficha Bart.png">
+                <h2>Turno de Bart</h2>
+            </div>
+        </div>
+        <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
+        <section class="invisible" id="tablero">
+            <!-- ACA IRIA EL TABLERO DEL JUEGO-->
+            <canvas id="canvas" class="canvas" width="1200" height="800"></canvas>
+        </section>
+    </div>
+
+    <script src="js/juego/cronometro.js"></script>
+    <script src="js/juego/jugar.js"></script>
+    <script src="js/juego/tablero.js"></script>
+    <script src="js/juego/ficha.js"></script>
+    <script src="js/juego/juego.js"></script>
+</body>
+
+</html>
