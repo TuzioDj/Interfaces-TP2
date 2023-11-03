@@ -4,16 +4,10 @@ class Tablero {
     constructor(ctx, cantidad) {
         this.alto = 2 + cantidad;
         this.ancho = 2 + cantidad;
-        //dependiendo la cantidad de fichas con las que se juega en donde commienza X
-        if (cantidad == 4) {
-            this.comienzoX = 400;
-        } else {
-            this.comienzoX = 320
-        }
-
-        this.comienzoY = 80;
         this.ladoImagen = 80;
-
+        //dependiendo la cantidad de fichas con las que se juega en donde commienza X   
+        this.comienzoX = this.ladoImagen * 2;
+        this.comienzoY = this.ladoImagen;
         this.ctx = ctx;
         this.image = new Image();
         this.imageArrow = new Image();

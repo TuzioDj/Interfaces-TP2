@@ -10,8 +10,8 @@ class Juego {
         this.limite = fichasAGanar;
         this.ganador = null;
         //establecemos pos1 y pos2 para ubicar las fichas
-        this.pos1 = this.tablero.comienzoX - 120;
-        this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
+        this.pos1 = this.tablero.ladoImagen / 2;
+        this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + this.tablero.ladoImagen / 2;
         this.radius = 35;
         this.espera;
         this.cronometro;
@@ -33,14 +33,14 @@ class Juego {
     }
 
     generarFichas(ficha, pos) {
-        if (pos == this.tablero.comienzoX - 120) {
+        if (pos < (this.tablero.ancho * this.tablero.ladoImagen / 2)) {
             //genera la ficha 1 y la agrega al arreglo
-            ficha = new Ficha(pos + this.radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4 en Linea/Tablero/Ficha Homero.png', 1);
+            ficha = new Ficha(pos + this.radius + 5, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4 en Linea/Tablero/Ficha Homero.png', 1);
 
             this.fichas.push(ficha);
         } else {
             //genera la ficha 2 y la agrega al arreglo
-            ficha = new Ficha(pos + this.radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4 en Linea/Tablero/Ficha Bart.png', 2);
+            ficha = new Ficha(pos + this.radius + 5, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4 en Linea/Tablero/Ficha Bart.png', 2);
             //la ficha es  bloqueada porque siempre arranca el jugador 1
             ficha.bloquearFicha();
             this.fichas.push(ficha);

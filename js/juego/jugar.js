@@ -2,8 +2,8 @@
 
 let canvas = /** @type { HTMLcanvasElement} */ document.getElementById("canvas");
 let ctx = canvas.getContext('2d');
-let width = canvas.width;
-let height = canvas.height;
+let width = 0;
+let height = 0;
 let fichas = [];
 let fichaSelect;
 let arrastrar = false;
@@ -26,15 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let btnPlay = document.getElementById('btn_play');
     let contenedor_menu = document.getElementById('init_juego');
     let contenedor_juego = document.getElementById('contenedor_juego');
-    let areas = document.querySelectorAll('.area');
     let tablero_cont = document.getElementById('tablero');
     btnPlay.addEventListener('click', () => {
         contenedor_menu.classList.add('inactive');
         contenedor_juego.classList.remove('inactive');
-        let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
-        for (let area of areas) {
-            area.classList.add('inactive');
-        }
+        let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; 
         tablero_cont.classList.remove('invisible');
         let cuantas = document.getElementById("cantFichas");
         cuantas.innerHTML = "Fichas para ganar: " + jugabilidad;
@@ -49,25 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function cargarJuego(jugabilidad) {
     //dibujamos el tablero y creamos la modalida dde juego
-    console.log(jugabilidad);
-    tablero = new Tablero(ctx, jugabilidad, width, height);
-    juego = new Juego(tablero, jugabilidad);
     let cantfichas = (((jugabilidad + 2) * (jugabilidad + 2)) / 2);
+    tablero = new Tablero(ctx, jugabilidad);
+    juego = new Juego(tablero, jugabilidad);
+    width = juego.pos2 + tablero.ladoImagen + 40;
+    height = (jugabilidad + 4) * tablero.ladoImagen;
+    canvas.width = width;
+    canvas.height = height;
     //generamos las fichas
     for (let i = 0; i < cantfichas; i++) {
         juego.generarFichas('ficha1', juego.getpos1());
         juego.generarFichas('ficha2', juego.getpos2());
 
     }
-
-
     //llamamos a mostrar fichas e inicializamos el timer
     juego.mostrarFichas();
     juego.timer();
-
-
-
-
 }
 
 

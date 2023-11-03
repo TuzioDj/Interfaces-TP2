@@ -38,40 +38,6 @@
         </div>
     </div>
 
-    <!-- <div class="area ">
-        <ul class="circles ">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-    <div class="area1">
-        <ul class="circles ">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div> -->
-
     <div id="contenedor_juego" class="juego inactive">
         <!-- ACA IRIA JUGABILIDAD-->
         <div class="options">
@@ -85,11 +51,6 @@
                     src="/images/4 en Linea/Opciones/Salir.png"><h2>Salir</h2></a>
         </div>
         <div class="gameInfo">
-            <div class="turno" id="player1">
-                <img src="/images/4 en Linea/Tablero/Ficha Homero.png">
-                <h2>Turno de Homero</h2>
-            </div>
-
             <div id="theWinnerIs" class="inactive">
                 <h2 id="quienGano"></h2>
                 <h2 id="sinTiempo"></h2>
@@ -99,15 +60,21 @@
                 <h2>Tiempo restante</h2>
                 <h2 id="cronometro"></h2>
             </div>
+        </div>
+        <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
+        <section class="invisible" id="tablero">
+            <div class="turno" id="player1">
+                <img src="/images/4 en Linea/Tablero/Ficha Homero.png">
+                <h2>Turno de Homero</h2>
+            </div>
+            
+            <!-- ACA IRIA EL TABLERO DEL JUEGO-->
+            <canvas id="canvas" class="canvas" width="700" height="800"></canvas>
+            
             <div class="turno invisible" id="player2">
                 <img src="/images/4 en Linea/Tablero/Ficha Bart.png">
                 <h2>Turno de Bart</h2>
             </div>
-        </div>
-        <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
-        <section class="invisible" id="tablero">
-            <!-- ACA IRIA EL TABLERO DEL JUEGO-->
-            <canvas id="canvas" class="canvas" width="1200" height="800"></canvas>
         </section>
     </div>
 
