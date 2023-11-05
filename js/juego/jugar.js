@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor_juego.classList.remove('inactive');
         let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; 
         tablero_cont.classList.remove('invisible');
-        let cuantas = document.getElementById("cantFichas");
-        cuantas.innerHTML = "Fichas para ganar: " + jugabilidad;
         cargarJuego(Number(jugabilidad));
     });
 
@@ -49,7 +47,7 @@ function cargarJuego(jugabilidad) {
     tablero = new Tablero(ctx, jugabilidad);
     juego = new Juego(tablero, jugabilidad);
     width = juego.pos2 + tablero.ladoImagen + 40;
-    height = (jugabilidad + 4) * tablero.ladoImagen;
+    height = (jugabilidad + 3) * tablero.ladoImagen;
     canvas.width = width;
     canvas.height = height;
     //generamos las fichas

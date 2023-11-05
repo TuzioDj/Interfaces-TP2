@@ -18,7 +18,7 @@
     <div id="init_juego" class="contMenu">
         <div class="gameMen">
             <div class="size">
-                <h2 class="titulo">Seleccione modo de juego</h2>
+                <h3 class="titulo">Seleccione modo de juego</h3>
                 <label for="html">
                     <input type="radio" class="cantidad" id="option1" name="boardSize" value="4" checked>
                     <h3>4 en línea</h3>
@@ -33,7 +33,7 @@
                 </label><br>
             </div>
             <button id="btn_play" class="boton botonPrimarioVioleta">
-                <h2>JUGAR</h2>
+                <h3>JUGAR</h3>
             </button>
         </div>
     </div>
@@ -41,40 +41,43 @@
     <div id="contenedor_juego" class="juego inactive">
         <!-- ACA IRIA JUGABILIDAD-->
         <div class="options">
-            <a href="#" id="btn_reset" class=""><img class="" id="fichaBtn"
-                    src="/images/4 en Linea/Opciones/Reinicio.png"><h2>Reiniciar</h2></a>
-            <div>
-                <h2 id="cantFichas"></h2>
-
+            <a href="#" id="btn_reset" class="">
+                <img class="" id="fichaBtn" src="/images/4 en Linea/Opciones/Reinicio.png">
+                <h3>Reiniciar</h3>
+            </a>
+            <div id="tmp">
+                <h3>Tiempo restante</h3>
+                <h3 id="cronometro"></h3>
             </div>
-            <a href="4enLinea.html" id="btn_exit" class=""><img class="" id="fichaBtn"
-                    src="/images/4 en Linea/Opciones/Salir.png"><h2>Salir</h2></a>
+            <a href="4enLinea.html" id="btn_exit" class="">
+                <img class="" id="fichaBtn" src="/images/4 en Linea/Opciones/Salir.png">
+                <h3>Salir</h3>
+            </a>
         </div>
         <div class="gameInfo">
             <div id="theWinnerIs" class="inactive">
-                <h2 id="quienGano"></h2>
-                <h2 id="sinTiempo"></h2>
-            </div>
-
-            <div id="tmp">
-                <h2>Tiempo restante</h2>
-                <h2 id="cronometro"></h2>
+                <h3 id="quienGano"></h3>
+                <h3 id="sinTiempo"></h3>
             </div>
         </div>
         <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
         <section class="invisible" id="tablero">
-            <div class="turno" id="player1">
+
+            <div class="turno player1" id="player1">
                 <img src="/images/4 en Linea/Tablero/Ficha Homero.png">
-                <h2>Turno de Homero</h2>
+                <h3>Turno de</h3>
+                <h3>Homero</h3>
             </div>
-            
+
             <!-- ACA IRIA EL TABLERO DEL JUEGO-->
-            <canvas id="canvas" class="canvas" width="700" height="800"></canvas>
-            
-            <div class="turno invisible" id="player2">
+            <canvas id="canvas" class="canvas"></canvas>
+
+            <div class="turno player2 invisible" id="player2">
                 <img src="/images/4 en Linea/Tablero/Ficha Bart.png">
-                <h2>Turno de Bart</h2>
+                <h3>Turno de</h3>
+                <h3>Bart</h3>
             </div>
+
         </section>
     </div>
 
