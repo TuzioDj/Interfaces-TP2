@@ -78,7 +78,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 0px 0px 15px 15px;
-    background: #7724FF;
+    background: var(--violeta-1);
 }
 
 .btnsBarraInferior {
@@ -246,7 +246,7 @@
     padding: 10px;
     flex-direction: column;
     align-items: center;
-    background-color: var(--violeta1);
+    background-color: var(--violeta-1);
     border-radius: 20px;
 }
 

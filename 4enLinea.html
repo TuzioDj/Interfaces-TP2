@@ -17,26 +17,73 @@
 <body>
     <div id="init_juego" class="contMenu">
         <div class="gameMen">
-            <div class="size">
-                <h3 class="titulo">Seleccione modo de juego</h3>
-                <label for="html">
-                    <input type="radio" class="cantidad" id="option1" name="boardSize" value="4" checked>
-                    <h3>4 en línea</h3>
-                </label><br>
-                <label for="css">
-                    <input type="radio" class="cantidad" id="option2" name="boardSize" value="5">
-                    <h3>5 en línea</h3>
-                </label><br>
-                <label for="javascript">
-                    <input type="radio" class="cantidad" id="javascript" name="boardSize" value="6">
-                    <h3>6 en línea</h3>
-                </label><br>
+            <div class="inputs">
+                <form class="size">
+                    <h3 class="titulo tituloCentrado">Seleccione modo de juego</h3>
+                    <label>
+                        <input type="radio" class="cantidad" name="boardSize" value="4" checked>
+                        <h3>4 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="cantidad" name="boardSize" value="5">
+                        <h3>5 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="cantidad" name="boardSize" value="6">
+                        <h3>6 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="cantidad" name="boardSize" value="7">
+                        <h3>7 en línea</h3>
+                    </label><br>
+                </form>
+                <form class="size">
+                    <h3 class="titulo tituloCentrado">Jugador 1: Seleccione personaje</h3>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="4" checked>
+                        <h3>4 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="5">
+                        <h3>5 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="6">
+                        <h3>6 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="7">
+                        <h3>7 en línea</h3>
+                    </label><br>
+                </form>
+                <form class="size">
+                    <h3 class="titulo tituloCentrado">Jugador 1: Seleccione personaje</h3>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="4" checked>
+                        <h3>4 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="5">
+                        <h3>5 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="6">
+                        <h3>6 en línea</h3>
+                    </label><br>
+                    <label>
+                        <input type="radio" class="jugador1" name="boardSize" value="7">
+                        <h3>7 en línea</h3>
+                    </label><br>
+                </form>
             </div>
             <button id="btn_play" class="boton botonPrimarioVioleta">
                 <h3>JUGAR</h3>
             </button>
         </div>
     </div>
+
+
+
 
     <div id="contenedor_juego" class="juego inactive">
         <!-- ACA IRIA JUGABILIDAD-->
@@ -49,16 +96,14 @@
                 <h3>Tiempo restante</h3>
                 <h3 id="cronometro"></h3>
             </div>
-            <a href="4enLinea.html" id="btn_exit" class="">
-                <img class="" id="fichaBtn" src="/images/4 en Linea/Opciones/Salir.png">
-                <h3>Salir</h3>
-            </a>
-        </div>
-        <div class="gameInfo">
             <div id="theWinnerIs" class="inactive">
                 <h3 id="quienGano"></h3>
                 <h3 id="sinTiempo"></h3>
             </div>
+            <a href="4enLinea.html" id="btn_exit" class="">
+                <img class="" id="fichaBtn" src="/images/4 en Linea/Opciones/Salir.png">
+                <h3>Salir</h3>
+            </a>
         </div>
         <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
         <section class="invisible" id="tablero">

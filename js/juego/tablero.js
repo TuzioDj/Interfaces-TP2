@@ -4,7 +4,9 @@ class Tablero {
     constructor(ctx, cantidad) {
         this.alto = 2 + cantidad;
         this.ancho = 2 + cantidad;
-        this.ladoImagen = 80;
+        this.tamanio = 480
+        this.ladoImagen = this.tamanio / this.ancho;
+        console.log(this.ladoImagen);
         //dependiendo la cantidad de fichas con las que se juega en donde commienza X   
         this.comienzoX = this.ladoImagen * 2;
         this.comienzoY = this.ladoImagen;
@@ -126,13 +128,30 @@ class Tablero {
 
     //dibujamos el tablero
     draw() {
-        let imagenTablero = this.ctx.createPattern(this.image, "repeat");
-        let arrowImage = this.ctx.createPattern(this.imageArrow, "repeat");
+        for (let fila = 0; fila < this.alto; fila++) {
+            for (let columna = 0; columna < this.ancho; columna++) {
+              const x = this.comienzoX + columna * this.ladoImagen; // Coordenada X en el canvas
+              const y = this.comienzoY + fila * this.ladoImagen; // Coordenada Y en el canvas
+          
+              // Dibuja la imagen redimensionada en la posición (x, y)
+              this.ctx.drawImage(this.image, x, y, this.ladoImagen, this.ladoImagen);
+            }
+        }
+        for (let columna = 0; columna < this.ancho; columna++) {
+            const x = this.comienzoX + columna * this.ladoImagen; // Coordenada X en el canvas
+            const y = 0; // Coordenada Y en el canvas
+        
+            // Dibuja la imagen redimensionada en la posición (x, y)
+            this.ctx.drawImage(this.imageArrow, x, y, this.ladoImagen, this.ladoImagen);
+          }
 
-        this.ctx.fillStyle = imagenTablero;
-        this.ctx.fillRect(this.comienzoX, this.comienzoY, (this.image.width * this.ancho), (this.image.height * this.alto));
+        // let imagenTablero = this.ctx.createPattern(this.image, "repeat");
+        // let arrowImage = this.ctx.createPattern(this.imageArrow, "repeat");
 
-        this.ctx.fillStyle = arrowImage;
-        this.ctx.fillRect(this.comienzoX, this.comienzoY - 80, (this.imageArrow.width * this.ancho), (this.imageArrow.height * 1));
+        // this.ctx.fillStyle = imagenTablero;
+        // this.ctx.fillRect(this.comienzoX, this.comienzoY, (this.image.width * this.ancho), (this.image.height * this.alto));
+
+        // this.ctx.fillStyle = arrowImage;
+        // this.ctx.fillRect(this.comienzoX, this.comienzoY - 80, (this.imageArrow.width * this.ancho), (this.imageArrow.height * 1));
     }
 }

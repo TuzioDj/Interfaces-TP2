@@ -12,7 +12,8 @@ class Juego {
         //establecemos pos1 y pos2 para ubicar las fichas
         this.pos1 = this.tablero.ladoImagen / 2;
         this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + this.tablero.ladoImagen / 2;
-        this.radius = 35;
+        this.tamanio = 480
+        this.radius = (this.tamanio / (this.limite+2)) / 2 - 5;
         this.espera;
         this.cronometro;
     }

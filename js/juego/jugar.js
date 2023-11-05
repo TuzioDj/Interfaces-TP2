@@ -34,8 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tablero_cont.classList.remove('invisible');
         cargarJuego(Number(jugabilidad));
     });
-
-
 });
 
 

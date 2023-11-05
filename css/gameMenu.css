@@ -43,7 +43,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 1020px;
+    height: 740px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -53,6 +53,9 @@ body{
 }
 
 .size {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    padding: 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,6 +64,14 @@ body{
 .size label{
     display: flex;
     gap: 5px;
+}
+
+.inputs{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .botonPrimarioVioleta{
