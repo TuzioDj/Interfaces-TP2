@@ -1,12 +1,10 @@
 "use strict";
 class Juego {
-    constructor(tablero, fichasAGanar) {
+    constructor(tablero, fichasAGanar, jugador1, jugador2) {
 
         this.tablero = tablero;
         this.fichas = [];
         this.contadorFichasUbicadas = 0;
-        //mostramos el tablero
-        this.mostrarTablero();
         this.limite = fichasAGanar;
         this.ganador = null;
         //establecemos pos1 y pos2 para ubicar las fichas
@@ -16,6 +14,8 @@ class Juego {
         this.radius = (this.tamanio / (this.limite+2)) / 2 - 5;
         this.espera;
         this.cronometro;
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
     }
 
 
@@ -25,12 +25,6 @@ class Juego {
 
     getpos2() {
         return this.pos2;
-    }
-
-
-    //llama a crear tablero dentro de la clase tablero
-    mostrarTablero() {
-        this.tablero.crearTablero();
     }
 
     generarFichas(ficha, pos, jugador1, jugador2) {
@@ -241,7 +235,6 @@ class Juego {
 
             contador++;
         }
-        console.log(contador);
         return contador;
     }
 
@@ -267,9 +260,9 @@ class Juego {
         if (this.ganador) {
             ganador = fichaSelect.getJugador();
             if (ganador == 1) {
-                contenedor.innerHTML = `Ganador: Homero`;                
+                contenedor.innerHTML = `Ganador: ${this.jugador1}`;                
             } else {
-                contenedor.innerHTML = `Ganador: Bart`;                                
+                contenedor.innerHTML = `Ganador: ${this.jugador2}`;                                
             }
 
         } else {

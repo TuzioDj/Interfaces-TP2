@@ -266,7 +266,7 @@ span.botonAlternativa {
 }
 
 .successAnimation h2{
-    color: #24DCFF;;
+    color: #24DCFF;
     margin: 5px 0;
 }
 .checkmark {
@@ -274,9 +274,9 @@ span.botonAlternativa {
     border-radius: 50%;
     display: block;
     stroke-width: 2;
-    stroke: #24DCFF;;
+    stroke: #24DCFF;
     stroke-miterlimit: 10;
-    box-shadow: inset 0px 0px 0px #24DCFF;;
+    box-shadow: inset 0px 0px 0px #24DCFF;
     position: relative;
     margin: 0 auto;
 }
@@ -290,7 +290,7 @@ span.botonAlternativa {
     stroke-dashoffset: 166;
     stroke-width: 2;
     stroke-miterlimit: 10;
-    stroke: #24DCFF;;
+    stroke: #24DCFF;
 }
 
 .checkmarkCircleAnimation {

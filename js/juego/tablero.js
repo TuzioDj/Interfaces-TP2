@@ -6,7 +6,6 @@ class Tablero {
         this.ancho = 2 + cantidad;
         this.tamanio = 480
         this.ladoImagen = this.tamanio / this.ancho;
-        console.log(this.ladoImagen);
         //dependiendo la cantidad de fichas con las que se juega en donde commienza X   
         this.comienzoX = this.ladoImagen * 2;
         this.comienzoY = this.ladoImagen;
