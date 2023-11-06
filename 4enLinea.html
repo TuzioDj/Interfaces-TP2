@@ -40,39 +40,39 @@
                 <form class="size">
                     <h3 class="titulo tituloCentrado">Jugador 1: Seleccione personaje</h3>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="4" checked>
-                        <h3>4 en línea</h3>
+                        <input type="radio" class="jugador1" name="jugador1" value="Homero" checked>
+                        <h3>Homero</h3>
                     </label><br>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="5">
-                        <h3>5 en línea</h3>
+                        <input type="radio" class="jugador1" name="jugador1" value="Bart">
+                        <h3>Bart</h3>
                     </label><br>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="6">
-                        <h3>6 en línea</h3>
+                        <input type="radio" class="jugador1" name="jugador1" value="Marge">
+                        <h3>Marge</h3>
                     </label><br>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="7">
-                        <h3>7 en línea</h3>
+                        <input type="radio" class="jugador1" name="jugador1" value="Lisa">
+                        <h3>Lisa</h3>
                     </label><br>
                 </form>
                 <form class="size">
-                    <h3 class="titulo tituloCentrado">Jugador 1: Seleccione personaje</h3>
+                    <h3 class="titulo tituloCentrado">Jugador 2: Seleccione personaje</h3>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="4" checked>
-                        <h3>4 en línea</h3>
+                        <input type="radio" class="jugador2" name="jugador2" value="Homero">
+                        <h3>Homero</h3>
                     </label><br>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="5">
-                        <h3>5 en línea</h3>
+                        <input type="radio" class="jugador2" name="jugador2" value="Bart" checked>
+                        <h3>Bart</h3>
                     </label><br>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="6">
-                        <h3>6 en línea</h3>
+                        <input type="radio" class="jugador2" name="jugador2" value="Marge">
+                        <h3>Marge</h3>
                     </label><br>
                     <label>
-                        <input type="radio" class="jugador1" name="boardSize" value="7">
-                        <h3>7 en línea</h3>
+                        <input type="radio" class="jugador2" name="jugador2" value="Lisa">
+                        <h3>Lisa</h3>
                     </label><br>
                 </form>
             </div>
@@ -109,18 +109,18 @@
         <section class="invisible" id="tablero">
 
             <div class="turno player1" id="player1">
-                <img src="/images/4 en Linea/Tablero/Ficha Homero.png">
+                <img id="fichaPlayer1" src="">
                 <h3>Turno de</h3>
-                <h3>Homero</h3>
+                <h3 id="turno1"></h3>
             </div>
 
             <!-- ACA IRIA EL TABLERO DEL JUEGO-->
             <canvas id="canvas" class="canvas"></canvas>
 
             <div class="turno player2 invisible" id="player2">
-                <img src="/images/4 en Linea/Tablero/Ficha Bart.png">
+                <img id="fichaPlayer2" src="">
                 <h3>Turno de</h3>
-                <h3>Bart</h3>
+                <h3 id="turno2"></h3>
             </div>
 
         </section>

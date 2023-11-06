@@ -9,6 +9,8 @@ let fichaSelect;
 let arrastrar = false;
 let tablero;
 let juego;
+let jugador1;
+let jugador2;
 
 
 
@@ -31,15 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor_menu.classList.add('inactive');
         contenedor_juego.classList.remove('inactive');
         let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; 
+        this.jugador1 = document.querySelector('input[name="jugador1"]:checked').value;
+        this.jugador2 = document.querySelector('input[name="jugador2"]:checked').value;
         tablero_cont.classList.remove('invisible');
-        cargarJuego(Number(jugabilidad));
+        cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
     });
 });
 
 
 
 
-function cargarJuego(jugabilidad) {
+function cargarJuego(jugabilidad, jugador1, jugador2) {
     //dibujamos el tablero y creamos la modalida dde juego
     let cantfichas = (((jugabilidad + 2) * (jugabilidad + 2)) / 2);
     tablero = new Tablero(ctx, jugabilidad);
@@ -49,11 +53,22 @@ function cargarJuego(jugabilidad) {
     canvas.width = width;
     canvas.height = height;
     //generamos las fichas
-    for (let i = 0; i < cantfichas; i++) {
+    if (jugabilidad % 2 === 0) {
+        for (let i = 0; i < cantfichas; i++) {
+            juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
+            juego.generarFichas('ficha2', juego.getpos2(), jugador1, jugador2);
+        }        
+    } else {
+        for (let i = 0; i < cantfichas -1; i++) {
+            juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
+            juego.generarFichas('ficha2', juego.getpos2(), jugador1, jugador2);
+        }
         juego.generarFichas('ficha1', juego.getpos1());
-        juego.generarFichas('ficha2', juego.getpos2());
-
     }
+    document.querySelector('#turno1').innerHTML = `${jugador1}`;
+    document.querySelector('#turno2').innerHTML = `${jugador2}`;
+    document.querySelector('#fichaPlayer1').src = `/images/4 en Linea/Tablero/Ficha ${jugador1} amarilla.png`
+    document.querySelector('#fichaPlayer2').src = `/images/4 en Linea/Tablero/Ficha ${jugador2} roja.png`
     //llamamos a mostrar fichas e inicializamos el timer
     juego.mostrarFichas();
     juego.timer();
@@ -80,7 +95,7 @@ reset.addEventListener('click', () => {
         mje.innerHTML = '';
     });
 
-    cargarJuego(Number(jugabilidad));
+    cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
 })
 
 //}

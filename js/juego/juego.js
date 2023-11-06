@@ -33,15 +33,15 @@ class Juego {
         this.tablero.crearTablero();
     }
 
-    generarFichas(ficha, pos) {
+    generarFichas(ficha, pos, jugador1, jugador2) {
         if (pos < (this.tablero.ancho * this.tablero.ladoImagen / 2)) {
             //genera la ficha 1 y la agrega al arreglo
-            ficha = new Ficha(pos + this.radius + 5, (Math.random() * (((this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4 en Linea/Tablero/Ficha Homero.png', 1);
+            ficha = new Ficha(pos + this.radius + 5, (Math.random() * (((this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, `../images/4 en Linea/Tablero/Ficha ${jugador1} amarilla.png`, 1);
 
             this.fichas.push(ficha);
         } else {
             //genera la ficha 2 y la agrega al arreglo
-            ficha = new Ficha(pos + this.radius + 5, (Math.random() * (((this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4 en Linea/Tablero/Ficha Bart.png', 2);
+            ficha = new Ficha(pos + this.radius + 5, (Math.random() * (((this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, `../images/4 en Linea/Tablero/Ficha ${jugador2} roja.png`, 2);
             //la ficha es  bloqueada porque siempre arranca el jugador 1
             ficha.bloquearFicha();
             this.fichas.push(ficha);
