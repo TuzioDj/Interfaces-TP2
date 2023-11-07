@@ -47,7 +47,7 @@ canvas {
 }
 
 .turno {
-    width: 8%;
+    width: 5vw;
     display: flex;
     gap: 10px;
     flex-direction: column;

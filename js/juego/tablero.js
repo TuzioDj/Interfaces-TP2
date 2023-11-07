@@ -96,10 +96,12 @@ class Tablero {
         //Calculamos la posicion en la cual se va a colocar la ficha, en base a la fila y columna en la que tiene que caer
         let x = this.comienzoX + fila * this.ladoImagen + this.ladoImagen / 2;
         let y = this.comienzoY + columna * this.ladoImagen + this.ladoImagen / 2;
+        console.log(x, y);
         ficha.setPosX(x);
         ficha.setPosY(y);
         ficha.bloquearFicha();
-        //se recorren las fichas, para ver a que jugador coresponde y manejar turnos
+        fichaSelect.posicionarFicha();
+        //Recorremos las fichas, para ver a que jugador coresponde y manejar turnos
         let player1 = document.querySelector("#player1");
         let player2 = document.querySelector("#player2");
         juego.fichas.forEach(ficha => {
@@ -122,7 +124,7 @@ class Tablero {
         });
     }
 
-    //dibujamos el tablero
+    //Dibujamos el tablero
     draw() {
         for (let fila = 0; fila < this.alto; fila++) {
             for (let columna = 0; columna < this.ancho; columna++) {
@@ -140,14 +142,5 @@ class Tablero {
             // Dibuja la imagen redimensionada en la posición (x, y)
             this.ctx.drawImage(this.imageArrow, x, y, this.ladoImagen, this.ladoImagen);
           }
-
-        // let imagenTablero = this.ctx.createPattern(this.image, "repeat");
-        // let arrowImage = this.ctx.createPattern(this.imageArrow, "repeat");
-
-        // this.ctx.fillStyle = imagenTablero;
-        // this.ctx.fillRect(this.comienzoX, this.comienzoY, (this.image.width * this.ancho), (this.image.height * this.alto));
-
-        // this.ctx.fillStyle = arrowImage;
-        // this.ctx.fillRect(this.comienzoX, this.comienzoY - 80, (this.imageArrow.width * this.ancho), (this.imageArrow.height * 1));
     }
 }

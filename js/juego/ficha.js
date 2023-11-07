@@ -14,6 +14,7 @@ class Ficha {
         this.jugador = numJugador;
         this.selected = false;
         this.bloqueada = false;
+        this.posicionada = false;
 
         this.image = new Image();
         this.image.src = imagen;
@@ -64,31 +65,28 @@ class Ficha {
         this.bloqueada = false;
     }
 
+    posicionarFicha() {
+        this.posicionada = true;
+    }
+
     estaUbicada() {
+        return this.posicionada;
+    }
+    estaBloqueada() {
         return this.bloqueada;
     }
+    
     draw() {
-        //dibuja la ficha dada una imagen
+        //Dibujamos la ficha dada una imagen
         this.ctx.fillStyle = this.image;
 
         this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
 
         this.ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
-
-    }
-
-    isClickedCuadrado(posicion) {
-        //funciona solamente con cuadrado
-        if ((posicion.x < this.posX + this.radio / 2 && posicion.x >= this.posX - this.radio / 2) &&
-            (posicion.y < this.posY + this.radio / 2 && posicion.y >= this.posY - this.radio / 2)) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     isClickedCirculo(posicion) {
-        //verifica que el circulo se haya clickeado
+        //Verificamos que el circulo se haya clickeado
         if (Math.sqrt((posicion.x - this.posX) * (posicion.x - this.posX) + (posicion.y - this.posY) * (posicion.y - this.posY)) <=
             this.radio) {
             return true;

@@ -146,8 +146,7 @@ canvas.addEventListener('mousedown', (evt) => {
         let ficha = juego.fichas[i];
         //Si se hizo click en la ficha y no esta ubicada se genera un arrastre
         if (ficha.isClickedCirculo(mousePos)) {
-            if (!ficha.estaUbicada()) {
-                console.log(ficha);
+            if (!ficha.estaUbicada() && !ficha.estaBloqueada()) {
                 //Permitimos el arrastre en la ficha
                 arrastrar = true;
                 //Seteamos la nueva posicion de ficha y dibujamos
