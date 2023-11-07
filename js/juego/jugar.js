@@ -11,16 +11,16 @@ let tablero;
 let juego;
 let jugador1;
 let jugador2;
+let jugabilidad;
 
 
 
 function oMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
-    return { // devuelve un objeto
+    return {
         x: Math.round(evt.clientX - rect.left),
         y: Math.round(evt.clientY - rect.top),
     }
-
 }
 
 
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnPlay.addEventListener('click', () => {
         contenedor_menu.classList.add('inactive');
         contenedor_juego.classList.remove('inactive');
-        let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; 
-        this.jugador1 = document.querySelector('input[name="jugador1"]:checked').value;
-        this.jugador2 = document.querySelector('input[name="jugador2"]:checked').value;
+        jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; 
+        jugador1 = document.querySelector('input[name="jugador1"]:checked').value;
+        jugador2 = document.querySelector('input[name="jugador2"]:checked').value;
         tablero_cont.classList.remove('invisible');
-        cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
+        cargarJuego(Number(jugabilidad), jugador1, jugador2);
     });
 });
 
@@ -44,14 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function cargarJuego(jugabilidad, jugador1, jugador2) {
-    //dibujamos el tablero y creamos la modalida dde juego
+    //Determinamos la cantidad de fichas que tendra cada jugador
     let cantfichas = (((jugabilidad + 2) * (jugabilidad + 2)) / 2);
+
+    //Creamos el tablero y el juego
     tablero = new Tablero(ctx, jugabilidad);
     juego = new Juego(tablero, jugabilidad, jugador1, jugador2);
+
+    //Determinamos el tamanio del canvas
     width = juego.pos2 + tablero.ladoImagen + 40;
     height = (jugabilidad + 3) * tablero.ladoImagen;
     canvas.width = width;
     canvas.height = height;
+
+    //Generamos las fichas segun la modalidad. En caso de que sea impar, se debe hacer una ficha menos en el jugador2, ya que sino sobra una
     if (jugabilidad % 2 === 0) {
         for (let i = 0; i < cantfichas; i++) {
             juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
@@ -64,12 +70,14 @@ function cargarJuego(jugabilidad, jugador1, jugador2) {
         }
         juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
     }
-    //generamos las fichas
+
+    //Generamos el contenido del HTML segun los jugadores elegidos
     document.querySelector('#turno1').innerHTML = `${jugador1}`;
     document.querySelector('#turno2').innerHTML = `${jugador2}`;
     document.querySelector('#fichaPlayer1').src = `/images/4 en Linea/Tablero/Ficha ${jugador1} amarilla.png`
     document.querySelector('#fichaPlayer2').src = `/images/4 en Linea/Tablero/Ficha ${jugador2} roja.png`
-    //llamamos a mostrar fichas e inicializamos el timer
+    
+    //Llamamos a mostrar las fichas y los tableros cuando ya todas las imagenes esten cargadas
     juego.fichas[juego.fichas.length-1].image.onload = () => {
         juego.mostrarFichas();
     };
@@ -78,12 +86,16 @@ function cargarJuego(jugabilidad, jugador1, jugador2) {
             tablero.draw();
         }
     }
+    //Iniciamos el cronometro
     juego.timer();
 }
 
 
 function resetGame(){
-    ctx.clearRect(0, 0, width, height); //limpiamos canvas
+    //Limpiamos el canvas para poder volver a jugar
+    ctx.clearRect(0, 0, width, height);
+
+    //Volvemos a poner el turno del jugador1, independiente de cual fue el ultimo turno antes de reiniciar
     let turno = document.getElementById("player1");
     let noTurno = document.getElementById("player2");
     turno.classList.remove("invisible");
@@ -91,54 +103,54 @@ function resetGame(){
     noTurno.classList.remove("visible");
     noTurno.classList.add("invisible");
 
+    //Reiniciamos el cronometro
+    clearInterval(juego.espera);
 
-    clearInterval(juego.espera); //reiniciamos timer
-    let mensajes = document.querySelectorAll("#theWinnerIs h2"); //para el caso de que se reinicie por un ganador
+    //Volvemos al inicio por si el reinicio se hizo luego de un ganador, independiente de si hubo ganador o no
+    let mensajes = document.querySelectorAll("#theWinnerIs h2");
     let ganador = document.querySelector("#theWinnerIs");
     let tiempo = document.querySelector("#tmp");
     tiempo.classList.remove("inactive");
     ganador.classList.remove("active");
     ganador.classList.add("inactive");
-
     mensajes.forEach(mje => {
         mje.innerHTML = '';
     });
 }
 
-let reset = document.querySelector("#btn_reset"); //reinicia el juego con la modalidad ya seleccionada
-
+let reset = document.querySelector("#btn_reset");
 reset.addEventListener('click', () => {
-    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; //mantenemos la modalidad de juego seleccionada
+    //Reiniciamos y volvemos a cargar el juego con la misma modalidad y jugadores
     resetGame();
-    cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
+    cargarJuego(Number(jugabilidad), jugador1, jugador2);
 })
 
-let exit = document.querySelector("#btn_exit"); //reinicia el juego con la modalidad ya seleccionada
 
+let exit = document.querySelector("#btn_exit");
 exit.addEventListener('click', () => {
+    //Reiniciamos e intercambiamos el juego con el menu
     resetGame();
     let contenedor_menu = document.getElementById('init_juego');
     let contenedor_juego = document.getElementById('contenedor_juego');
     contenedor_menu.classList.remove('inactive');
     contenedor_juego.classList.add('inactive');
-
 })
 
 
-//}
-//cuando se hace click en el mouse
+
 canvas.addEventListener('mousedown', (evt) => {
-    //obtenemos la posicion
+    //Obtenemos la posicion del mouse
     var mousePos = oMousePos(canvas, evt);
-    //recorremos todas las fichas para ver cual esta clickeada
+    //Obtenemos la ficha clickeada
     for (let i = juego.fichas.length - 1; i >= 0; i--) {
         let ficha = juego.fichas[i];
-        //si se hizo click en la ficha y no esta ubicada se genera el arrastre
+        //Si se hizo click en la ficha y no esta ubicada se genera un arrastre
         if (ficha.isClickedCirculo(mousePos)) {
             if (!ficha.estaUbicada()) {
-                //cambiamos el estado de arrastrar para el movimiento del mouse
+                console.log(ficha);
+                //Permitimos el arrastre en la ficha
                 arrastrar = true;
-                //seteamos la nueva posicion de ficha
+                //Seteamos la nueva posicion de ficha y dibujamos
                 fichaSelect = ficha;
                 fichaSelect.setPosX(mousePos.x);
                 fichaSelect.setPosY(mousePos.y);
@@ -152,34 +164,31 @@ canvas.addEventListener('mousedown', (evt) => {
 
 
 }, false);
-//cuando se mueve el mouse dibujamos de nuevo las fichas en las respectivas posiciones
-canvas.addEventListener("mousemove", function(evt) {
-    let mousePos = oMousePos(canvas, evt);
 
+canvas.addEventListener("mousemove", function(evt) {
+    //Hacemos que cuando se mueva el mouse, la ficha se vaya redibujando haciendo un seguimiento del mismo
+    let mousePos = oMousePos(canvas, evt);
     if (arrastrar) {
         ctx.clearRect(0, 0, width, height);
         fichaSelect.setPosX(mousePos.x);
         fichaSelect.setPosY(mousePos.y);
         tablero.draw();
         juego.mostrarFichas();
-
     }
 }, false);
 
-//una vez que se suelta la ficha comprobamos en donde termino ese evento
 canvas.addEventListener("mouseup", function(evt) {
+    //Hacemos que cuando se levante el click, se ubique la ficha y la deseleccionamos
     let mousePos = oMousePos(canvas, evt);
-
     arrastrar = false;
     if (fichaSelect) {
         juego.ubicarFicha(mousePos.x, mousePos.y, fichaSelect, ctx);
-
     }
     fichaSelect = null;
-
 }, false);
 
-canvas.addEventListener("mouseout", function(evt) {
+canvas.addEventListener("mouseout", function() {
+    //En caso de que el mouse salga del canvas, volvemos la ficha a su posicion inicial y la deseleccionamos
     if (arrastrar) {
         arrastrar = false;
         ctx.clearRect(0, 0, width, height);

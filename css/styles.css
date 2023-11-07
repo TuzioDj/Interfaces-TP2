@@ -68,7 +68,7 @@ a {
     --violeta-2: #2D0075;
     --violeta-1: #5300DB;
     --violeta0: #7724FF;
-    --violeta1: #A36BFF;
+    --violeta1: #8a44fa;
     --violeta2: #D3B8FF;
     --violeta3: #EFE5FF;
 
@@ -127,7 +127,7 @@ a {
     }
 
     50% {
-        scale: 1.02;
+        scale: 1.03;
         background-color: var(--celeste1);
     }
 
@@ -143,8 +143,8 @@ a {
     }
 
     50% {
-        scale: 1.02;
-        background-color: var(--violeta-1);
+        scale: 1.03;
+        background-color: var(--violeta1);
     }
 
     100% {

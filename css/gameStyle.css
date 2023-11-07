@@ -88,6 +88,10 @@ canvas {
     text-align: center;
 }
 
+#quienGano{
+    text-align: center;
+}
+
 .exit {
     display: block;
     margin-block-start: 1em;

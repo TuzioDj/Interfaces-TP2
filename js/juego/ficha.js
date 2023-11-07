@@ -9,13 +9,14 @@ class Ficha {
         this.color = color;
         this.ctx = ctx;
         this.radio = radio;
-        //se le asigna a la ficha un numero de jugador para reconocerla a la hora de ubicarla
+
+        //Asignamos un jugador a la ficha
         this.jugador = numJugador;
         this.selected = false;
         this.bloqueada = false;
+
         this.image = new Image();
         this.image.src = imagen;
-        //una vez que la imagen se carga se dibuja la ficha
     }
 
     getPosX() {
