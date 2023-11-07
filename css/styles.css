@@ -159,7 +159,7 @@ a {
     }
 
     50% {
-        transform: scale(1.02);
+        transform: scale(1.03);
         border-color: var(--celeste-2);
     }
 
